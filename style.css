@@ -75,3 +75,6 @@ transition:var(--transition);
 /* Botón para cambiar entre modo claro y oscuro. */
 .theme-btn{border:1px solid var(--border);background:var(--surface);color:var(--text);padding:10px 14px;border-radius:999px;cursor:pointer;font-weight:800;transition:var(--transition);}
 .theme-btn:hover{transform:scale(1.05);}
+/* Separación vertical de cada bloque principal de la web. */
+.section{padding:90px 0;}
+.soft-bg{background:rgba(255,255,255,0.35);}
