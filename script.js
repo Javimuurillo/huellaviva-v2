@@ -425,3 +425,31 @@ function initVolunteerForm() {
     message.textContent = "Solicitud enviada correctamente. Puedes consultarla en la sección Estado.";
   });
 }
+// Permite consultar solicitudes guardadas buscando por email.
+function initStatusChecker() {
+  const statusBtn = document.getElementById("statusBtn");
+  const statusEmail = document.getElementById("statusEmail");
+  const statusResults = document.getElementById("statusResults");
+  statusBtn.addEventListener("click", () => {
+    const email = statusEmail.value.toLowerCase().trim();
+    const requests = JSON.parse(localStorage.getItem("huella-requests")) || [];
+    const results = requests.filter(request => request.email.toLowerCase() === email);
+    if (!email) {
+      statusResults.innerHTML = `<p class="empty">Introduce un email para consultar.</p>`;
+      return;
+    }
+    if (results.length === 0) {
+      statusResults.innerHTML = `<p class="empty">No hay solicitudes asociadas a ese email.</p>`;
+      return;
+    }
+    statusResults.innerHTML = results.map(request => `
+      <div class="status-card">
+        <h3>${request.type}</h3>
+        <p><strong>Estado:</strong> ${request.status}</p>
+        <p><strong>Fecha:</strong> ${request.date}</p>
+        ${request.petName ? `<p><strong>Mascota:</strong> ${request.petName}</p>` : ""}
+        ${request.availability ? `<p><strong>Disponibilidad:</strong> ${request.availability}</p>` : ""}
+      </div>
+    `).join("");
+  });
+}
