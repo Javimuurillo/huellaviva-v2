@@ -324,3 +324,11 @@ transform:translateY(0);
 /* Animación flotante reutilizada en imágenes y tarjetas. */
 @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-14px);}}
 @media (max-width:1024px){
+hero-grid,.form-grid,/* Distribución de tienda: productos a un lado y carrito al otro. */
+.shop-layout{grid-template-columns:1fr;}
+/* Cuadrícula usada para mascotas y productos. */
+.cards-grid{grid-template-columns:repeat(2,1fr);}
+.features-grid,.objectives-grid{grid-template-columns:repeat(2,1fr);}
+/* Carrito de compra simulado. */
+.cart{position:static;}
+}    
