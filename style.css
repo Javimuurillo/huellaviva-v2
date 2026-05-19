@@ -4,3 +4,22 @@
   Aquí están los colores, tamaños, tarjetas, animaciones, modo oscuro,
   administración, chatbot y diseño responsive.
 */
+
+/* Variables generales: colores y valores reutilizables para no repetir código. */
+:root{
+--primary:#2172d9;
+--primary-dark:#1554a3;
+--accent:#238f6f;
+--orange:#ff914d;
+--bg:#ecf4fa;
+--surface:#ffffff;
+--text:#14213d;
+--muted:#64748b;
+--border:rgba(20,33,61,0.12);
+--shadow:0 20px 60px rgba(15,23,42,0.12);
+--footer-bg:#101b33;
+--footer-text:#f8fbff;
+--footer-muted:rgba(248,251,255,0.78);
+--radius:28px;
+--transition:0.25s ease;
+}
