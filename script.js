@@ -18,3 +18,5 @@ document.addEventListener("DOMContentLoaded", () => {
   renderPets();
   // Dibuja las tarjetas de eventos.
   renderEvents();
+  // Carga productos añadidos desde administración.
+  loadSavedAdminProducts();
