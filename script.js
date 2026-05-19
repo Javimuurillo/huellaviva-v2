@@ -241,3 +241,18 @@ function createAdoptionRequest(petId) {
   document.getElementById("petModal").close();
   alert(`Solicitud de adopción de ${pet.name} guardada correctamente.`);
 }
+// Dibuja en pantalla todos los eventos guardados en el array events.
+function renderEvents() {
+  const eventsList = document.getElementById("eventsList");
+  eventsList.innerHTML = events.map((event, index) => `
+    <article class="event-card reveal visible" style="animation-delay: ${index * 0.12}s">
+      <img src="${event.img}" alt="${event.title}">
+      <div class="event-content">
+        <span class="badge">${event.category}</span>
+        <h3>${event.title}</h3>
+        <div class="event-meta"><span>📅 ${event.date}</span><span>⏰ ${event.time}</span><span>📍 ${event.location}</span></div>
+        <p>${event.description}</p>
+      </div>
+    </article>
+  `).join("");
+}
