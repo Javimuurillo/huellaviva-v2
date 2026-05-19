@@ -8,3 +8,5 @@
 
 // Esperamos a que cargue todo el HTML antes de ejecutar funciones.
 document.addEventListener("DOMContentLoaded", () => {
+    // Activa el modo claro/oscuro y recuerda la elección del usuario.
+  initTheme();
