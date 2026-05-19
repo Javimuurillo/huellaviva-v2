@@ -447,3 +447,27 @@ font-size:1.3rem;
 color:var(--text);
 white-space:nowrap;
 }
+.product-bottom /* Botones generales reutilizados en toda la página. */
+.btn{
+padding:12px 18px;
+border-radius:16px;
+}
+/* Carrito de compra simulado. */
+.cart{
+background:linear-gradient(180deg,var(--surface),rgba(236,244,250,0.82));
+border:1px solid var(--border);
+}
+body.dark /* Carrito de compra simulado. */
+.cart{
+background:linear-gradient(180deg,#16243a,#0f172a);
+}
+.cart-item{
+background:rgba(33,114,217,0.055);
+border:1px solid var(--border);
+border-radius:16px;
+padding:12px;
+margin-bottom:10px;
+}
+body.dark .cart-item{
+background:rgba(96,165,250,0.09);
+}
