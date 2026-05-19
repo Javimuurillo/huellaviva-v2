@@ -63,3 +63,6 @@ transition:var(--transition);
 .header.scrolled{box-shadow:0 10px 30px rgba(15,23,42,0.08);}
 /* Barra de navegación: coloca logo, enlaces y botón de tema en una fila. */
 .navbar{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+/* Logo de la web. */
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--orange);font-weight:900;font-size:1.25rem;}
+.logo-icon{background:var(--orange);color:white;width:38px;height:38px;display:grid;place-items:center;border-radius:12px;}
