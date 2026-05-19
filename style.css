@@ -398,3 +398,52 @@ border-color:rgba(96,165,250,0.55);
 grid-template-columns:minmax(0,1fr) 360px;
 gap:34px;
 }
+#productsGrid/* Cuadrícula usada para mascotas y productos. */
+.cards-grid{
+grid-template-columns:repeat(auto-fit,minmax(235px,1fr));
+align-items:stretch;
+}
+.product-card{
+display:flex;
+flex-direction:column;
+min-height:100%;
+background:linear-gradient(180deg,var(--surface),rgba(255,255,255,0.92));
+}
+body.dark .product-card{
+background:linear-gradient(180deg,#16243a,#101a2c);
+}
+.product-image-wrap{
+height:210px;
+overflow:hidden;
+background:linear-gradient(135deg,rgba(33,114,217,0.12),rgba(255,145,77,0.13));
+}
+.product-image-wrap img{
+height:100%;
+width:100%;
+object-fit:cover;
+transition:transform 0.5s ease;
+}
+.product-card:hover .product-image-wrap img{
+transform:scale(1.08);
+}
+.product-/* Estilo general del cuerpo de la página. */
+body{
+display:flex;
+flex-direction:column;
+flex:1;
+}
+.product-body p{
+flex:1;
+}
+.product-bottom{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:12px;
+margin-top:18px;
+}
+.price{
+font-size:1.3rem;
+color:var(--text);
+white-space:nowrap;
+}
