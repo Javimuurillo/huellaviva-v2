@@ -78,3 +78,5 @@ transition:var(--transition);
 /* Separación vertical de cada bloque principal de la web. */
 .section{padding:90px 0;}
 .soft-bg{background:rgba(255,255,255,0.35);}
+/* Sección inicial o hero: primera pantalla de la web. */
+.hero{min-height:calc(100vh - 72px);display:flex;align-items:center;background:radial-gradient(circle at top left,rgba(33,114,217,0.18),transparent 35%),radial-gradient(circle at bottom right,rgba(35,143,111,0.16),transparent 30%);}
