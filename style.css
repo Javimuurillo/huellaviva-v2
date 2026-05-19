@@ -66,3 +66,7 @@ transition:var(--transition);
 /* Logo de la web. */
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--orange);font-weight:900;font-size:1.25rem;}
 .logo-icon{background:var(--orange);color:white;width:38px;height:38px;display:grid;place-items:center;border-radius:12px;}
+/* Enlaces principales del menú. */
+.nav-links{display:flex;align-items:center;gap:16px;}
+.nav-links a{text-decoration:none;color:var(--muted);font-weight:700;font-size:0.95rem;transition:var(--transition);}
+.nav-links a:hover{color:var(--orange);transform:translateY(-2px);}
