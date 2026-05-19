@@ -325,3 +325,30 @@ function changeQuantity(productId, change) {
 function saveCart() {
   localStorage.setItem("huella-cart", JSON.stringify(cart));
 }
+// Pinta el carrito, calcula el total y gestiona la compra simulada.
+function renderCart() {
+  const cartItems = document.getElementById("cartItems");
+  const cartTotal = document.getElementById("cartTotal");
+  const checkoutBtn = document.getElementById("checkoutBtn");
+  if (cart.length === 0) {
+    cartItems.innerHTML = `<p class="empty">El carrito está vacío.</p>`;
+    cartTotal.textContent = formatMoney(0);
+    return;
+  }
+  let total = 0;
+  cartItems.innerHTML = cart.map(cartProduct => {
+    const product = products.find(item => item.id === cartProduct.id);
+    const subtotal = product.price * cartProduct.quantity;
+    total += subtotal;
+    return `
+      <div class="cart-item">
+        <div><strong>${product.name}</strong><br><small>${formatMoney(product.price)} x ${cartProduct.quantity}</small></div>
+        <div class="qty-controls">
+          <button type="button" onclick="changeQuantity('${product.id}', -1)">-</button>
+          <span>${cartProduct.quantity}</span>
+          <button type="button" onclick="changeQuantity('${product.id}', 1)">+</button>
+        </div>
+      </div>
+    `;
+  }).join("");
+  cartTotal.textContent = formatMoney(total);
