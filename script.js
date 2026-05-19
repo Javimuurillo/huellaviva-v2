@@ -194,3 +194,39 @@ function toggleFavorite(petId) {
   const exists = favorites.includes(petId);
   const updatedFavorites = exists ? favorites.filter(id => id !== petId) : [...favorites, petId];
   saveFavorites(updatedFavorites);
+  // Dibuja las tarjetas de mascotas disponibles.
+  renderPets();
+}
+// Abre la ficha estética de una mascota dentro de una ventana modal.
+function openPetModal(petId) {
+  const pet = pets.find(item => item.id === petId);
+  const modal = document.getElementById("petModal");
+  const modalContent = document.getElementById("modalContent");
+  modalContent.innerHTML = `
+    <button class="modal-close" type="button" aria-label="Cerrar ficha" onclick="document.getElementById('petModal').close()">×</button>
+    <div class="modal-image-wrap">
+      <img src="${pet.img}" alt="${pet.name}">
+      <div class="modal-image-label">${pet.type === "dog" ? "🐶 Perro" : "🐱 Gato"} en adopción</div>
+    </div>
+    <div class="modal-body">
+      <p class="eyebrow">Ficha de adopción</p>
+      <h2>${pet.name}</h2>
+      <p class="modal-intro">${pet.temperament}</p>
+      <div class="pet-info-grid">
+        <div><span>Raza</span><strong>${pet.breed}</strong></div>
+        <div><span>Edad</span><strong>${pet.age}</strong></div>
+        <div><span>Sexo</span><strong>${pet.gender}</strong></div>
+        <div><span>Tamaño</span><strong>${pet.size}</strong></div>
+      </div>
+      <div class="care-box">
+        <strong>Cuidados principales</strong>
+        <p>${pet.care}</p>
+      </div>
+      <div class="modal-actions">
+        <button class="btn primary" onclick="createAdoptionRequest('${pet.id}')">Solicitar adopción</button>
+        <button class="btn secondary" onclick="document.getElementById('petModal').close()">Cerrar</button>
+      </div>
+    </div>
+  `;
+  modal.showModal();
+}
