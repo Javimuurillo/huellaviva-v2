@@ -103,4 +103,17 @@ function initTheme() {
   updateThemeButtons();
   if (themeBtn) themeBtn.addEventListener("click", toggleTheme);
   adminThemeButtons.forEach(button => button.addEventListener("click", toggleTheme));
+
+  // Controla el menú responsive: abre/cierra el menú en pantallas pequeñas.
+function initMenu() {
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+    const isOpen = navLinks.classList.contains("open");
+    menuToggle.setAttribute("aria-expanded", isOpen);
+  });
+  navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => navLinks.classList.remove("open"));
+  });
 }
