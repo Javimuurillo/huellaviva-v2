@@ -93,3 +93,14 @@ function initTheme() {
       button.setAttribute("aria-label", label);
     });
   };
+  // Función interna que alterna la clase dark en el body.
+  const toggleTheme = () => {
+    document.body.classList.toggle("dark");
+    const theme = document.body.classList.contains("dark") ? "dark" : "light";
+    localStorage.setItem("huella-theme", theme);
+    updateThemeButtons();
+  };
+  updateThemeButtons();
+  if (themeBtn) themeBtn.addEventListener("click", toggleTheme);
+  adminThemeButtons.forEach(button => button.addEventListener("click", toggleTheme));
+}
