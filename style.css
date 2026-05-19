@@ -47,3 +47,6 @@ line-height:1.6;
 overflow-x:hidden;
 }
 img{width:100%;display:block;}
+/* Contenedor central: limita el ancho para que el contenido no quede pegado a los bordes. */
+.container{width:min(1180px,calc(100% - 32px));margin:0 auto;}
+.narrow{max-width:860px;}
