@@ -216,3 +216,14 @@ textarea,select,input{font-family:inherit;}
 .result-card{padding:18px;border-radius:18px;background:rgba(35,143,111,0.12);border:1px solid rgba(35,143,111,0.2);}
 /* Grid del formulario de voluntariado. */
 .form-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:46px;align-items:start;}
+/* Tarjeta que contiene formularios. */
+.form-card{padding:28px;display:grid;gap:16px;}
+.form-card label{display:grid;gap:8px;font-weight:900;}
+.form-card input,.form-card select{padding:14px 16px;border-radius:16px;border:1px solid var(--border);background:var(--bg);color:var(--text);outline:none;font-size:1rem;}
+.form-message{color:var(--accent);font-weight:900;min-height:24px;}
+.status-search{display:flex;gap:12px;flex-wrap:wrap;}
+.status-results{margin-top:20px;display:grid;gap:14px;}
+.status-card{background:var(--bg);border:1px solid var(--border);border-radius:18px;padding:16px;}
+.objectives-grid{grid-template-columns:repeat(7,1fr);}
+.objective{padding:22px;}
+.objective strong{width:38px;height:38px;border-radius:12px;background:var(--primary);color:white;display:grid;place-items:center;}
