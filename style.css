@@ -199,3 +199,12 @@ body{padding:20px;}
 .event-meta{color:var(--muted);font-weight:800;margin:8px 0 12px;display:flex;flex-wrap:wrap;gap:12px;}
 /* Distribución de tienda: productos a un lado y carrito al otro. */
 .shop-layout{display:grid;grid-template-columns:1fr 330px;gap:28px;align-items:start;}
+/* Carrito de compra simulado. */
+.cart{padding:24px;position:sticky;top:94px;}
+.cart h3{font-size:1.5rem;margin-bottom:16px;}
+.cart-item{display:grid;grid-template-columns:1fr auto;gap:10px;padding:12px 0;border-bottom:1px solid var(--border);}
+.cart-item small{color:var(--muted);}
+.qty-controls{display:flex;align-items:center;gap:6px;}
+.qty-controls button{width:28px;height:28px;border:0;border-radius:8px;cursor:pointer;background:var(--primary);color:white;font-weight:900;}
+.cart-total{display:flex;justify-content:space-between;align-items:center;padding:18px 0;font-size:1.2rem;}
+.empty{color:var(--muted);text-align:center;padding:20px 0;}
