@@ -112,3 +112,30 @@
           <p>El 100% de las ganancias ayuda directamente a alimentar y cuidar a los peludos del refugio. ¡Tu compra salva vidas!</p>
         </div>
         <div class="shop-layout">
+            <!-- Aquí JavaScript inserta las tarjetas de productos. -->
+          <div class="cards-grid" id="productsGrid"></div>
+          <!-- Carrito lateral. JavaScript actualiza productos, cantidades y total. -->
+          <aside class="cart reveal" aria-label="Carrito de compra">
+            <h3>🛒 Carrito</h3>
+            <div id="cartItems" class="cart-items"></div>
+            <div class="cart-total"><span>Total</span><strong id="cartTotal">0,00 €</strong></div>
+            <button class="btn primary full" id="checkoutBtn" type="button">Finalizar compra simulada</button>
+          </aside>
+        </div>
+      </div>
+    </section>
+    <!-- MATCH: recomendador simple que elige mascota según palabras clave del texto escrito. -->
+    <section class="section soft-bg" id="match">
+      <div class="container narrow">
+        <div class="section-title reveal">
+          <p class="eyebrow">Recomendador</p>
+          <h2>Encuentra tu match perfecto</h2>
+          <p>Escribe cómo es tu casa y estilo de vida. El algoritmo busca palabras clave y recomienda una mascota.</p>
+        </div>
+        <div class="match-box reveal">
+          <textarea id="profileText" placeholder="Ejemplo: Vivo en un piso pequeño, trabajo desde casa y busco un gato tranquilo..."></textarea>
+          <button class="btn primary full" id="matchBtn" type="button">Buscar mi mascota ideal</button>
+          <div class="match-result" id="matchResult"></div>
+        </div>
+      </div>
+    </section>
