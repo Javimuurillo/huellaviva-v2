@@ -12,3 +12,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initTheme();
    // Prepara el menú responsive para móvil.
   initMenu();
+// Activa animaciones al hacer scroll y el botón de volver arriba.
+  initScrollEffects();
