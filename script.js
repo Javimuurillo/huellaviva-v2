@@ -230,3 +230,14 @@ function openPetModal(petId) {
   `;
   modal.showModal();
 }
+// Crea una solicitud de adopción simulada y la guarda en localStorage.
+function createAdoptionRequest(petId) {
+  const pet = pets.find(item => item.id === petId);
+  const email = prompt("Introduce tu email para guardar la solicitud de adopción:");
+  if (!email) return;
+  const requests = JSON.parse(localStorage.getItem("huella-requests")) || [];
+  requests.push({ id: Date.now(), type: "Adopción", email, petName: pet.name, status: "Pendiente de revisión", date: new Date().toLocaleDateString("es-ES") });
+  localStorage.setItem("huella-requests", JSON.stringify(requests));
+  document.getElementById("petModal").close();
+  alert(`Solicitud de adopción de ${pet.name} guardada correctamente.`);
+}
