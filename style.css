@@ -316,3 +316,11 @@ opacity:1;
 pointer-events:auto;
 transform:translateY(0);
 }
+/* Elementos con animación de entrada al hacer scroll. */
+.reveal{opacity:0;transform:translateY(35px);transition:opacity 0.7s ease,transform 0.7s ease;}
+/* Estado visible de los elementos animados. */
+.reveal.visible{opacity:1;transform:translateY(0);}
+.delay-1{transition-delay:0.15s;}
+/* Animación flotante reutilizada en imágenes y tarjetas. */
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-14px);}}
+@media (max-width:1024px){
