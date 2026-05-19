@@ -293,3 +293,35 @@ function getProductFallbackImage(category) {
     </svg>`;
   return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
 }
+// Convierte un número en precio con formato europeo, por ejemplo 12,99 €.
+function formatMoney(amount) {
+  return amount.toLocaleString("es-ES", { style: "currency", currency: "EUR" });
+}
+// Añade un producto al carrito o aumenta su cantidad si ya estaba dentro.
+function addToCart(productId) {
+  const item = cart.find(product => product.id === productId);
+  if (item) {
+    item.quantity += 1;
+  } else {
+    cart.push({ id: productId, quantity: 1 });
+  }
+  saveCart();
+  // Dibuja el carrito y su total.
+  renderCart();
+}
+// Suma o resta unidades de un producto dentro del carrito.
+function changeQuantity(productId, change) {
+  const item = cart.find(product => product.id === productId);
+  if (!item) return;
+  item.quantity += change;
+  if (item.quantity <= 0) {
+    cart = cart.filter(product => product.id !== productId);
+  }
+  saveCart();
+  // Dibuja el carrito y su total.
+  renderCart();
+}
+// Guarda el carrito en localStorage para mantenerlo al recargar.
+function saveCart() {
+  localStorage.setItem("huella-cart", JSON.stringify(cart));
+}
