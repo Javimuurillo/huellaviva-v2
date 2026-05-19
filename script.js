@@ -373,10 +373,11 @@ function renderCart() {
     alert("Compra simulada realizada. El pedido aparece ahora en Administración > Tienda.");
     cart = [];
     saveCart();
-    // Dibuja el carrito y su total.
+     // Dibuja el carrito y su total.
   renderCart();
   };
-}// Activa el recomendador: usa palabras clave para sugerir una mascota.
+}
+// Activa el recomendador: usa palabras clave para sugerir una mascota.
 function initMatch() {
   const matchBtn = document.getElementById("matchBtn");
   const profileText = document.getElementById("profileText");
@@ -405,5 +406,22 @@ function initMatch() {
         <button class="btn primary" type="button" onclick="openPetModal('${recommended.id}')">Ver ficha</button>
       </div>
     `;
+  });
+}
+// Activa el formulario de voluntariado y guarda la solicitud.
+function initVolunteerForm() {
+  const form = document.getElementById("volunteerForm");
+  const message = document.getElementById("volFormMessage");
+  form.addEventListener("submit", event => {
+    event.preventDefault();
+    const name = document.getElementById("volName").value.trim();
+    const email = document.getElementById("volEmail").value.trim();
+    const availability = document.getElementById("volAvailability").value;
+    const motivation = document.getElementById("volMessage").value.trim();
+    const requests = JSON.parse(localStorage.getItem("huella-requests")) || [];
+    requests.push({ id: Date.now(), type: "Voluntariado", name, email, availability, motivation, status: "Recibida", date: new Date().toLocaleDateString("es-ES") });
+    localStorage.setItem("huella-requests", JSON.stringify(requests));
+    form.reset();
+    message.textContent = "Solicitud enviada correctamente. Puedes consultarla en la sección Estado.";
   });
 }
