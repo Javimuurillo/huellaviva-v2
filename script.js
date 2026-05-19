@@ -352,3 +352,28 @@ function renderCart() {
     `;
   }).join("");
   cartTotal.textContent = formatMoney(total);
+   // Al finalizar compra, se crea un pedido simulado para verlo en Administración.
+  checkoutBtn.onclick = () => {
+    const customer = prompt("Introduce tu nombre para registrar el pedido:") || "Cliente invitado";
+    const email = prompt("Introduce tu email para registrar el pedido:") || "sin-email@huellaviva.local";
+    const orders = JSON.parse(localStorage.getItem("huella-orders")) || [];
+    orders.push({
+      id: Date.now(),
+      customer,
+      email,
+      total,
+      status: "Pendiente",
+      date: new Date().toLocaleDateString("es-ES"),
+      items: cart.map(cartProduct => {
+        const product = products.find(item => item.id === cartProduct.id);
+        return `${product.name} x ${cartProduct.quantity}`;
+      })
+    });
+    localStorage.setItem("huella-orders", JSON.stringify(orders));
+    alert("Compra simulada realizada. El pedido aparece ahora en Administración > Tienda.");
+    cart = [];
+    saveCart();
+    // Dibuja el carrito y su total.
+  renderCart();
+  };
+}
