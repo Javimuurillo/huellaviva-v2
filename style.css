@@ -393,3 +393,8 @@ background:rgba(96,165,250,0.12);
 color:#dbeafe;
 border-color:rgba(96,165,250,0.55);
 }
+/* Distribución de tienda: productos a un lado y carrito al otro. */
+.shop-layout{
+grid-template-columns:minmax(0,1fr) 360px;
+gap:34px;
+}
