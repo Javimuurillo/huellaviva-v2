@@ -332,3 +332,21 @@ hero-grid,.form-grid,/* Distribución de tienda: productos a un lado y carrito a
 /* Carrito de compra simulado. */
 .cart{position:static;}
 }    
+@media (max-width:760px){
+/* Botón hamburguesa para abrir el menú en móvil. */
+.menu-toggle{display:block;}
+/* Enlaces principales del menú. */
+.nav-links{position:fixed;top:72px;left:0;right:0;background:var(--surface);flex-direction:column;align-items:stretch;padding:22px;border-bottom:1px solid var(--border);transform:translateY(-140%);transition:var(--transition);box-shadow:var(--shadow);}
+.nav-links.open{transform:translateY(0);}
+.nav-links a,/* Botón para cambiar entre modo claro y oscuro. */
+.theme-btn{width:100%;text-align:left;}
+.hero-content h1{letter-spacing:-2px;}
+.hero-card img{height:360px;}
+.cards-grid,.features-grid,.objectives-grid{grid-template-columns:1fr;}
+/* Tarjeta individual de evento con imagen y texto. */
+.event-card{grid-template-columns:1fr;}
+/* Separación vertical de cada bloque principal de la web. */
+.section{padding:64px 0;}
+.status-search /* Botones generales reutilizados en toda la página. */
+.btn{width:100%;}
+}
