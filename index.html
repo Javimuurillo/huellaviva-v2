@@ -139,3 +139,39 @@
         </div>
       </div>
     </section>
+    <!-- VOLUNTARIADO: formulario para guardar solicitudes en localStorage. -->
+    <section class="section" id="voluntariado">
+      <div class="container form-grid">
+        <div class="section-title left reveal">
+          <p class="eyebrow">Participa</p>
+          <h2>Formulario de voluntariado</h2>
+          <p>Al enviar el formulario, la solicitud queda guardada en el navegador para poder consultarla después.</p>
+        </div>
+        <form class="form-card reveal" id="volunteerForm">
+          <label>Nombre completo<input type="text" id="volName" required placeholder="Tu nombre" /></label>
+          <label>Email<input type="email" id="volEmail" required placeholder="tu@email.com" /></label>
+          <label>Disponibilidad<select id="volAvailability" required><option value="">Selecciona una opción</option><option>Mañanas</option><option>Tardes</option><option>Fines de semana</option></select></label>
+          <label>¿Por qué quieres ayudar?<textarea id="volMessage" required placeholder="Escribe una breve explicación"></textarea></label>
+          <button class="btn primary full" type="submit">Enviar solicitud</button>
+          <p class="form-message" id="volFormMessage"></p>
+        </form>
+      </div>
+    </section>
+    <!-- ESTADO: consulta solicitudes guardadas usando el email del usuario. -->
+    <section class="section soft-bg" id="estado">
+      <div class="container narrow">
+        <div class="section-title reveal">
+          <p class="eyebrow">Seguimiento</p>
+          <h2>Consulta tu estado</h2>
+          <p>Introduce el email usado en adopción o voluntariado para ver solicitudes guardadas.</p>
+        </div>
+        <div class="status-box reveal">
+          <div class="status-search">
+            <input type="email" id="statusEmail" placeholder="tu@email.com" />
+            <button class="btn primary" id="statusBtn" type="button">Consultar</button>
+          </div>
+          <div id="statusResults" class="status-results"></div>
+        </div>
+      </div>
+    </section>
+  </main>
