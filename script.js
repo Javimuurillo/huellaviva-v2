@@ -151,3 +151,10 @@ function renderPets() {
   const paint = () => {
     const search = searchInput.value.toLowerCase().trim();
     const favorites = getFavorites();
+    // Filtramos por búsqueda y por tipo de animal.
+    const filteredPets = pets.filter(pet => {
+      const matchesSearch = pet.name.toLowerCase().includes(search) || pet.breed.toLowerCase().includes(search);
+      const matchesType = currentPetFilter === "all" || pet.type === currentPetFilter;
+      return matchesSearch && matchesType;
+    });
+    
