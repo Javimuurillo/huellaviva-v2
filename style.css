@@ -151,3 +151,5 @@ to{transform:rotate(360deg);}
 /* Botones generales reutilizados en toda la página. */
 .btn{border:0;text-decoration:none;padding:14px 22px;border-radius:18px;font-weight:900;cursor:pointer;display:inline-flex;justify-content:center;align-items:center;gap:8px;transition:var(--transition);}
 .btn:hover{transform:translateY(-3px) scale(1.02);}
+/* Botón principal azul. */
+.btn.primary{background:var(--primary);color:white;box-shadow:0 14px 30px rgba(33,114,217,0.28);}
