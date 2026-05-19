@@ -26,3 +26,5 @@ document.addEventListener("DOMContentLoaded", () => {
   renderCart();
   // Activa el recomendador de mascotas.
   initMatch();
+  // Activa el formulario de voluntariado.
+  initVolunteerForm();
