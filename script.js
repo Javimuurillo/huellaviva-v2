@@ -157,4 +157,34 @@ function renderPets() {
       const matchesType = currentPetFilter === "all" || pet.type === currentPetFilter;
       return matchesSearch && matchesType;
     });
-    
+     // Convertimos cada mascota filtrada en una tarjeta HTML.
+    petsGrid.innerHTML = filteredPets.map((pet, index) => `
+      <article class="pet-card reveal visible" style="animation-delay: ${index * 0.08}s">
+        <img class="card-image" src="${pet.img}" alt="${pet.name}, ${pet.breed}">
+        <div class="card-body">
+          <div class="badges"><span class="badge">${pet.status}</span><span class="badge">${pet.type === "dog" ? "Perro" : "Gato"}</span></div>
+          <h3>${pet.name}</h3>
+          <p><strong>${pet.breed}</strong> · ${pet.age}</p>
+          <p>${pet.temperament}</p>
+          <div class="card-actions">
+            <button class="btn primary" type="button" onclick="openPetModal('${pet.id}')">Ver ficha</button>
+            <button class="icon-btn ${favorites.includes(pet.id) ? "active" : ""}" type="button" onclick="toggleFavorite('${pet.id}')">♥</button>
+          </div>
+        </div>
+      </article>
+    `).join("");
+    if (filteredPets.length === 0) {
+      petsGrid.innerHTML = `<p class="empty">No hay mascotas que coincidan con la búsqueda.</p>`;
+    }
+  };
+  searchInput.addEventListener("input", paint);
+  filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      filterButtons.forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
+      currentPetFilter = button.dataset.filter;
+      paint();
+    });
+  });
+  paint();
+}
