@@ -159,3 +159,9 @@ to{transform:rotate(360deg);}
 .features-grid,.objectives-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
 .feature-card,.objective,.pet-card,.product-card,.event-card,.form-card,.match-box,.status-box,/* Carrito de compra simulado. */
 .cart{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);}
+/* Tarjetas pequeñas de funciones principales. */
+.feature-card{padding:28px;transition:var(--transition);}
+.feature-card:hover{transform:translateY(-8px);}
+.feature-card span{font-size:2rem;}
+.feature-card h3,.objective h3{margin:12px 0 8px;}
+.feature-card p,.objective p{color:var(--muted);}
