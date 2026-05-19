@@ -168,3 +168,19 @@ to{transform:rotate(360deg);}
 /* Buscador y filtros de mascotas. */
 .controls{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:32px;justify-content:center;}
 .controls input,.status-search input{min-width:min(100%,360px);flex:1;max-width:480px;padding:15px 18px;border-radius:16px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:1rem;outline:none;}
+/* Botones para filtrar perros, gatos o todos. */
+.filter-btn{padding:13px 20px;border-radius:16px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-weight:900;cursor:pointer;transition:var(--transition);}
+.filter-btn:hover,.filter-btn.active{background:var(--primary);color:white;transform:translateY(-2px);}
+/* Cuadrícula usada para mascotas y productos. */
+.cards-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;}
+/* Tarjetas de mascotas y productos. */
+.pet-card,.product-card{overflow:hidden;transition:var(--transition);}
+/* Efecto al pasar el ratón por encima de una tarjeta. */
+.pet-card:hover,.product-card:hover{transform:translateY(-10px);}
+/* Imágenes de tarjetas: mismo tamaño y recorte para todas. */
+.card-image{height:220px;object-fit:cover;}
+.card-/* Estilo general del cuerpo de la página. */
+body{padding:20px;}
+.card-body h3{font-size:1.35rem;}
+.card-body p{color:var(--muted);margin:8px 0;}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0;}
