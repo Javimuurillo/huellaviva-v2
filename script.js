@@ -16,3 +16,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initScrollEffects();
    // Dibuja las tarjetas de mascotas disponibles.
   renderPets();
+  // Dibuja las tarjetas de eventos.
+  renderEvents();
