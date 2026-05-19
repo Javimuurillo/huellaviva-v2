@@ -79,3 +79,17 @@ function initTheme() {
   if (savedTheme === "dark") {
     document.body.classList.add("dark");
   }
+  // Función interna que cambia el texto de los botones según el tema activo.
+  const updateThemeButtons = () => {
+    const isDark = document.body.classList.contains("dark");
+    const text = isDark ? "☀️ Claro" : "🌙 Oscuro";
+    const label = isDark ? "Cambiar a modo claro" : "Cambiar a modo oscuro";
+    if (themeBtn) {
+      themeBtn.textContent = text;
+      themeBtn.setAttribute("aria-label", label);
+    }
+    adminThemeButtons.forEach(button => {
+      button.textContent = text;
+      button.setAttribute("aria-label", label);
+    });
+  };
