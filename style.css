@@ -35,3 +35,6 @@ body.dark{
 --footer-text:#fff7ed;
 --footer-muted:rgba(255,247,237,0.78);
 }
+/* Reset básico: evita márgenes inesperados y hace más fácil calcular tamaños. */
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
