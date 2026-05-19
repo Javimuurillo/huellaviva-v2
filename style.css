@@ -80,3 +80,9 @@ transition:var(--transition);
 .soft-bg{background:rgba(255,255,255,0.35);}
 /* Sección inicial o hero: primera pantalla de la web. */
 .hero{min-height:calc(100vh - 72px);display:flex;align-items:center;background:radial-gradient(circle at top left,rgba(33,114,217,0.18),transparent 35%),radial-gradient(circle at bottom right,rgba(35,143,111,0.16),transparent 30%);}
+/* Grid del inicio: texto a la izquierda e imagen a la derecha. */
+.hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;align-items:center;gap:54px;}
+.hero-content h1{font-size:clamp(3rem,8vw,7rem);line-height:0.9;letter-spacing:-4px;margin:18px 0;}
+.hero-content h1 span{color:var(--primary);font-style:italic;}
+.hero-text{font-size:1.3rem;color:var(--muted);max-width:650px;}
+.hero-actions{display:flex;flex-wrap:wrap;gap:16px;margin-top:28px;}
