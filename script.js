@@ -24,3 +24,5 @@ document.addEventListener("DOMContentLoaded", () => {
   renderProducts();
   // Dibuja el carrito y su total.
   renderCart();
+  // Activa el recomendador de mascotas.
+  initMatch();
