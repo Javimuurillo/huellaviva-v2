@@ -38,3 +38,26 @@ body.dark{
 /* Reset básico: evita márgenes inesperados y hace más fácil calcular tamaños. */
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
+/* Estilo general del cuerpo de la página. */
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:var(--bg);
+color:var(--text);
+line-height:1.6;
+overflow-x:hidden;
+}
+img{width:100%;display:block;}
+/* Contenedor central: limita el ancho para que el contenido no quede pegado a los bordes. */
+.container{width:min(1180px,calc(100% - 32px));margin:0 auto;}
+.narrow{max-width:860px;}
+/* Cabecera fija superior con efecto de cristal. */
+.header{
+position:sticky;
+top:0;
+z-index:50;
+background:rgba(255,255,255,0.8);
+backdrop-filter:blur(16px);
+border-bottom:1px solid var(--border);
+transition:var(--transition);
+}
+.header.scrolled{box-shadow:0 10px 30px rgba(15,23,42,0.08);}
