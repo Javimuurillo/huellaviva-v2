@@ -5,3 +5,6 @@
   guardar datos en localStorage, abrir el panel de administración,
   controlar el modo oscuro, el carrito y el chatbot.
 */
+
+// Esperamos a que cargue todo el HTML antes de ejecutar funciones.
+document.addEventListener("DOMContentLoaded", () => {
