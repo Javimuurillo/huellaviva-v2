@@ -153,3 +153,9 @@ to{transform:rotate(360deg);}
 .btn:hover{transform:translateY(-3px) scale(1.02);}
 /* Botón principal azul. */
 .btn.primary{background:var(--primary);color:white;box-shadow:0 14px 30px rgba(33,114,217,0.28);}
+/* Botón secundario blanco/azul. */
+.btn.secondary{background:var(--surface);color:var(--primary);border:2px solid var(--primary);}
+.btn.full{width:100%;}
+.features-grid,.objectives-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+.feature-card,.objective,.pet-card,.product-card,.event-card,.form-card,.match-box,.status-box,/* Carrito de compra simulado. */
+.cart{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);}
