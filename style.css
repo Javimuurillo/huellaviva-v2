@@ -374,3 +374,22 @@ radial-gradient(circle at top left,rgba(96,165,250,0.20),transparent 34%),
 radial-gradient(circle at bottom right,rgba(251,146,60,0.14),transparent 32%),
 #07111f;
 }
+body.dark /* Cabecera fija superior con efecto de cristal. */
+.header{
+background:rgba(7,17,31,0.82);
+}
+body.dark .soft-bg{
+background:rgba(255,255,255,0.035);
+}
+/* Botón para cambiar entre modo claro y oscuro. */
+.theme-btn{
+min-width:105px;
+text-align:center;
+box-shadow:0 8px 22px rgba(15,23,42,0.08);
+}
+body.dark /* Botón secundario blanco/azul. */
+.btn.secondary{
+background:rgba(96,165,250,0.12);
+color:#dbeafe;
+border-color:rgba(96,165,250,0.55);
+}
