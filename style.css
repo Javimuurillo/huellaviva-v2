@@ -288,3 +288,31 @@ border:1px solid rgba(255,145,77,0.35);
 /* Contenido interno de la ficha de mascota. */
 .modal-content{background:var(--surface);color:var(--text);border-radius:30px;overflow:hidden;box-shadow:var(--shadow);}
 .modal-content img{height:320px;object-fit:cover;}
+.modal-/* Estilo general del cuerpo de la página. */
+body{padding:26px;}
+.modal-actions{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap;}
+/* Botón flotante para volver arriba. */
+.scroll-top{
+position:fixed;
+right:104px;
+bottom:33px;
+z-index:75;
+width:48px;
+height:48px;
+border:0;
+border-radius:50%;
+background:var(--primary);
+color:white;
+font-size:1.4rem;
+cursor:pointer;
+box-shadow:var(--shadow);
+opacity:0;
+pointer-events:none;
+transform:translateY(12px);
+transition:var(--transition);
+}
+.scroll-top.show{
+opacity:1;
+pointer-events:auto;
+transform:translateY(0);
+}
