@@ -23,3 +23,15 @@
 --radius:28px;
 --transition:0.25s ease;
 }
+/* Variables del modo oscuro: cambian los colores cuando el body tiene la clase dark. */
+body.dark{
+--bg:#0f172a;
+--surface:#162033;
+--text:#eef6ff;
+--muted:#a9b7c9;
+--border:rgba(255,255,255,0.12);
+--shadow:0 20px 60px rgba(0,0,0,0.35);
+--footer-bg:#090604;
+--footer-text:#fff7ed;
+--footer-muted:rgba(255,247,237,0.78);
+}
