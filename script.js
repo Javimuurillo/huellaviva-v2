@@ -256,3 +256,23 @@ function renderEvents() {
     </article>
   `).join("");
 }
+// Dibuja todos los productos de la tienda solidaria.
+function renderProducts() {
+  const productsGrid = document.getElementById("productsGrid");
+  productsGrid.innerHTML = products.map(product => `
+    <article class="product-card reveal visible">
+      <div class="product-image-wrap">
+        <img class="card-image" src="${product.img}" alt="${product.name}" onerror="this.src='${getProductFallbackImage(product.category)}'">
+      </div>
+      <div class="card-body product-body">
+        <span class="badge">${product.category}</span>
+        <h3>${product.name}</h3>
+        <p>${product.description}</p>
+        <div class="product-bottom">
+          <strong class="price">${formatMoney(product.price)}</strong>
+          <button class="btn primary" type="button" onclick="addToCart('${product.id}')">Añadir</button>
+        </div>
+      </div>
+    </article>
+  `).join("");
+}
