@@ -70,3 +70,5 @@ transition:var(--transition);
 .nav-links{display:flex;align-items:center;gap:16px;}
 .nav-links a{text-decoration:none;color:var(--muted);font-weight:700;font-size:0.95rem;transition:var(--transition);}
 .nav-links a:hover{color:var(--orange);transform:translateY(-2px);}
+/* Botón hamburguesa para abrir el menú en móvil. */
+.menu-toggle{display:none;border:0;background:var(--surface);color:var(--text);font-size:1.8rem;border-radius:12px;padding:5px 12px;box-shadow:var(--shadow);}
