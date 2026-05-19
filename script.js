@@ -68,3 +68,6 @@ let products = [
 
 // Carrito: se guarda en localStorage para que no se pierda al recargar la página.
 let cart = JSON.parse(localStorage.getItem("huella-cart")) || [];
+
+// Filtro actual de mascotas: all, dog o cat.
+let currentPetFilter = "all";
