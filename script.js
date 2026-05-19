@@ -10,3 +10,5 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Activa el modo claro/oscuro y recuerda la elección del usuario.
   initTheme();
+   // Prepara el menú responsive para móvil.
+  initMenu();
