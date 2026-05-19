@@ -32,3 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initStatusChecker();
    // Activa login y panel de administración.
   initAdminPanel();
+  // Activa el chatbot flotante.
+  initChatbot();
+});
