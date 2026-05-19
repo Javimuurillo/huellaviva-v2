@@ -55,3 +55,13 @@ const events = [
   { title: "Noche de Gatitos", date: "25 de mayo", time: "18:00 - 21:00", location: "Refugio felino", category: "Adopción", description: "Actividad especial dedicada a gatos que buscan una familia definitiva.", img: "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?q=80&w=800&h=600&auto=format&fit=crop" },
   { title: "Taller de Lenguaje Canino", date: "5 de junio", time: "11:00", location: "Aula educativa", category: "Educación", description: "Taller para aprender señales básicas de comportamiento y cuidado canino.", img: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?q=80&w=800&h=600&auto=format&fit=crop" }
 ];
+
+// Lista inicial de productos de la tienda solidaria.
+let products = [
+  { id: "dog-food", name: "Croquetas Pro-Salud Perro", category: "Comida", price: 45.99, description: "Alimento balanceado con proteínas de alta calidad.", img: "https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?q=80&w=900&h=900&auto=format&fit=crop" },
+  { id: "cat-food", name: "Festín Felino Gourmet", category: "Comida", price: 32.5, description: "Mezcla para gatos con omega 3 y 6.", img: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=900&h=900&auto=format&fit=crop" },
+  { id: "ball", name: "Pelota Ultra-Resistente", category: "Juguetes", price: 12.99, description: "Pelota de goma para perros activos.", img: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?q=80&w=900&h=900&auto=format&fit=crop" },
+  { id: "feather", name: "Varita de Plumas", category: "Juguetes", price: 8.5, description: "Juguete para estimular el instinto del gato.", img: "https://images.unsplash.com/photo-1545249390-6bdfa286032f?q=80&w=900&h=900&auto=format&fit=crop" },
+  { id: "bone", name: "Hueso de Peluche", category: "Juguetes", price: 9.99, description: "Juguete blando para cachorros.", img: "https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?q=80&w=900&h=900&auto=format&fit=crop" },
+  { id: "laser", name: "Puntero Láser LED", category: "Juguetes", price: 15.0, description: "Diversión interactiva para gatos.", img: "https://images.unsplash.com/photo-1573865526739-10659fec78a5?q=80&w=900&h=900&auto=format&fit=crop" }
+];
