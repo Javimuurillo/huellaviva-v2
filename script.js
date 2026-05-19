@@ -188,3 +188,9 @@ function renderPets() {
   });
   paint();
 }
+// Añade o quita una mascota de favoritos y vuelve a pintar las tarjetas.
+function toggleFavorite(petId) {
+  const favorites = getFavorites();
+  const exists = favorites.includes(petId);
+  const updatedFavorites = exists ? favorites.filter(id => id !== petId) : [...favorites, petId];
+  saveFavorites(updatedFavorites);
