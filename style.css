@@ -705,3 +705,9 @@ padding:10px 14px;
 cursor:pointer;
 margin-bottom:22px;
 }
+/* Panel completo de administración. */
+.admin-panel{
+min-height:100vh;
+background:#100b08;
+color:#fff7ed;
+}
