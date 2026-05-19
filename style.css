@@ -584,3 +584,18 @@ color:var(--muted);
 margin-top:4px;
 }
 @media (max-width:760px){
+/* Contenido interno de la ficha de mascota. */
+.modal-content{
+grid-template-columns:1fr;
+min-height:auto;
+}
+.modal-image-wrap{
+min-height:290px;
+}
+.modal-/* Estilo general del cuerpo de la página. */
+body{
+padding:26px;
+}
+.pet-info-grid{
+grid-template-columns:1fr;
+}    
