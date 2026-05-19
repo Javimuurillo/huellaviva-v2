@@ -30,3 +30,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initVolunteerForm();
   // Activa la consulta de estado por email.
   initStatusChecker();
+   // Activa login y panel de administración.
+  initAdminPanel();
