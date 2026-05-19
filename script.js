@@ -71,3 +71,11 @@ let cart = JSON.parse(localStorage.getItem("huella-cart")) || [];
 
 // Filtro actual de mascotas: all, dog o cat.
 let currentPetFilter = "all";
+// Controla el cambio entre modo claro y modo oscuro en la web y administración.
+function initTheme() {
+  const themeBtn = document.getElementById("themeBtn");
+  const adminThemeButtons = document.querySelectorAll(".admin-theme-btn");
+  const savedTheme = localStorage.getItem("huella-theme");
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+  }
