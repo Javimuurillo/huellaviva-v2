@@ -599,3 +599,13 @@ padding:26px;
 .pet-info-grid{
 grid-template-columns:1fr;
 }    
+/* Distribución de tienda: productos a un lado y carrito al otro. */
+.shop-layout{
+grid-template-columns:1fr;
+}
+.product-bottom{
+align-items:stretch;
+flex-direction:column;
+}
+}
+.hidden{display:none !important;}
