@@ -80,3 +80,14 @@
           <h2>Mascotas disponibles</h2>
           <p>Actualmente tenemos muchos compañeros esperando un hogar lleno de amor.</p>
         </div>
+         <!-- Controles de búsqueda y filtros. JavaScript los usa para mostrar solo las mascotas que coinciden. -->
+        <div class="controls reveal">
+          <input type="search" id="petSearch" placeholder="Buscar por nombre o raza..." aria-label="Buscar mascota" />
+          <button class="filter-btn active" data-filter="all" type="button">Todos</button>
+          <button class="filter-btn" data-filter="dog" type="button">Perros</button>
+          <button class="filter-btn" data-filter="cat" type="button">Gatos</button>
+        </div>
+        <!-- Aquí JavaScript inserta automáticamente las tarjetas de mascotas. -->
+        <div class="cards-grid" id="petsGrid"></div>
+      </div>
+    </section>
