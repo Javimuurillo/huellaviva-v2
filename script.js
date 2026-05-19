@@ -138,3 +138,7 @@ function initScrollEffects() {
 function getFavorites() {
   return JSON.parse(localStorage.getItem("huella-favorites")) || [];
 }
+// Guarda en el navegador la lista actualizada de favoritos.
+function saveFavorites(favorites) {
+  localStorage.setItem("huella-favorites", JSON.stringify(favorites));
+}
