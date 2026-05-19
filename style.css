@@ -208,3 +208,11 @@ body{padding:20px;}
 .qty-controls button{width:28px;height:28px;border:0;border-radius:8px;cursor:pointer;background:var(--primary);color:white;font-weight:900;}
 .cart-total{display:flex;justify-content:space-between;align-items:center;padding:18px 0;font-size:1.2rem;}
 .empty{color:var(--muted);text-align:center;padding:20px 0;}
+/* Cajas del recomendador y consulta de estado. */
+.match-box,.status-box{padding:28px;}
+textarea,select,input{font-family:inherit;}
+.match-box textarea,.form-card textarea{width:100%;min-height:150px;resize:vertical;padding:16px;border-radius:18px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:1rem;outline:none;margin-bottom:16px;}
+.match-result{margin-top:18px;}
+.result-card{padding:18px;border-radius:18px;background:rgba(35,143,111,0.12);border:1px solid rgba(35,143,111,0.2);}
+/* Grid del formulario de voluntariado. */
+.form-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:46px;align-items:start;}
