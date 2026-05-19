@@ -205,3 +205,56 @@
       </form>
     </div>
   </section>
+   <!-- PANEL DE ADMINISTRACIÓN: zona privada para gestionar adopciones, voluntarios y tienda. -->
+  <section class="admin-panel hidden" id="adminPanel" aria-label="Panel de gestión">
+    <header class="admin-topbar">
+      <div class="admin-brand">
+        <span class="admin-logo">🐾</span>
+        <strong>HUELLA VIVA</strong>
+      </div>
+      <nav class="admin-tabs" aria-label="Menú administración">
+        <button class="admin-tab active" data-admin-tab="adopciones" type="button">📋 Adopciones</button>
+        <button class="admin-tab" data-admin-tab="voluntarios" type="button">👥 Voluntarios</button>
+        <button class="admin-tab" data-admin-tab="tienda" type="button">🛒 Tienda</button>
+      </nav>
+      <div class="admin-top-actions">
+        <button class="admin-theme-btn" type="button">🌙 Oscuro</button>
+        <button class="admin-exit" id="adminExit" type="button">← Salir</button>
+      </div>
+    </header>
+    <main class="admin-main container">
+      <div class="admin-title">
+        <span>▦</span>
+        <div>
+          <h1>Panel de Gestión</h1>
+          <p>Administra solicitudes, tienda y voluntarios.</p>
+        </div>
+      </div>
+      <div class="admin-stats" id="adminStats"></div>
+      <div class="admin-toolbar">
+        <input type="search" id="adminSearch" placeholder="Filtrar por nombre o correo...">
+        <button class="admin-add-product hidden" id="adminAddProduct" type="button">＋ Añadir Producto</button>
+      </div>
+      <div class="admin-content" id="adminContent"></div>
+    </main>
+    <footer class="admin-footer">
+      <p>© 2026 Huella Viva. Todos los derechos reservados.</p>
+      <button class="footer-admin-link" id="adminBackFooter" type="button">Volver a la web</button>
+    </footer>
+  </section>
+  <!-- CHATBOT: asistente flotante que responde preguntas básicas del proyecto. -->
+  <aside class="chatbot" id="chatbot" aria-label="Chatbot Huellita">
+    <div class="chatbot-header">
+      <div class="chatbot-avatar">✨</div>
+      <div>
+        <strong>Huellita 🐾</strong>
+        <span><i></i> Asistente activo</span>
+      </div>
+      <button class="chatbot-close" id="chatbotClose" type="button" aria-label="Cerrar chatbot">×</button>
+    </div>
+    <div class="chatbot-messages" id="chatbotMessages"></div>
+    <form class="chatbot-form" id="chatbotForm">
+      <input id="chatbotInput" type="text" placeholder="Pregunta sobre adopciones..." autocomplete="off" aria-label="Escribe tu pregunta" required>
+      <button type="submit" aria-label="Enviar mensaje">➤</button>
+    </form>
+  </aside>
