@@ -78,3 +78,17 @@ transition:var(--transition);
 /* Separación vertical de cada bloque principal de la web. */
 .section{padding:90px 0;}
 .soft-bg{background:rgba(255,255,255,0.35);}
+/* Sección inicial o hero: primera pantalla de la web. */
+.hero{min-height:calc(100vh - 72px);display:flex;align-items:center;background:radial-gradient(circle at top left,rgba(33,114,217,0.18),transparent 35%),radial-gradient(circle at bottom right,rgba(35,143,111,0.16),transparent 30%);}
+/* Grid del inicio: texto a la izquierda e imagen a la derecha. */
+.hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;align-items:center;gap:54px;}
+.hero-content h1{font-size:clamp(3rem,8vw,7rem);line-height:0.9;letter-spacing:-4px;margin:18px 0;}
+.hero-content h1 span{color:var(--primary);font-style:italic;}
+.hero-text{font-size:1.3rem;color:var(--muted);max-width:650px;}
+.hero-actions{display:flex;flex-wrap:wrap;gap:16px;margin-top:28px;}
+/* Tarjeta grande de imagen del inicio con animación flotante. */
+.hero-card{position:relative;border-radius:44px;overflow:hidden;box-shadow:var(--shadow);border:12px solid var(--surface);animation:float 4s ease-in-out infinite;}
+.hero-card img{height:520px;object-fit:cover;transition:transform 0.8s ease;}
+.hero-card:hover img{transform:scale(1.08) rotate(1deg);}
+.floating-badge{position:absolute;bottom:22px;left:22px;background:var(--surface);color:var(--text);padding:14px 18px;border-radius:18px;font-weight:900;box-shadow:var(--shadow);}
+.eyebrow{text-transform:uppercase;color:var(--primary);font-weight:900;letter-spacing:0.18em;font-size:0.82rem;}
