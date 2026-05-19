@@ -15,3 +15,25 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+<!-- Botón flotante para volver arriba cuando el usuario baja por la página. -->
+  <button class="scroll-top" id="scrollTop" aria-label="Volver arriba">↑</button>
+  <!-- CABECERA: contiene el logo, el menú de navegación y el botón de modo claro/oscuro. -->
+  <header class="header" id="header">
+    <nav class="navbar container" aria-label="Navegación principal">
+      <a href="#inicio" class="logo" aria-label="Ir al inicio">
+        <span class="logo-icon">🐾</span>
+        <span>Huella Viva</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#mascotas">Mascotas</a>
+        <a href="#eventos">Eventos</a>
+        <a href="#tienda">Tienda</a>
+        <a href="#match">Match</a>
+        <a href="#voluntariado">Voluntariado</a>
+        <a href="#estado">Estado</a>
+        <button class="theme-btn" id="themeBtn" type="button">🌙 Tema</button>
+      </div>
+    </nav>
+  </header>
+  
