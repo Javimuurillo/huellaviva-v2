@@ -471,3 +471,58 @@ margin-bottom:10px;
 body.dark .cart-item{
 background:rgba(96,165,250,0.09);
 }
+* Ventana modal para la ficha de una mascota. */
+.modal{
+max-width:980px;
+border-radius:34px;
+}
+/* Contenido interno de la ficha de mascota. */
+.modal-content{
+position:relative;
+display:grid;
+grid-template-columns:0.95fr 1.05fr;
+min-height:520px;
+border:1px solid var(--border);
+}
+.modal-close{
+position:absolute;
+top:16px;
+right:16px;
+z-index:3;
+width:42px;
+height:42px;
+border:0;
+border-radius:50%;
+background:rgba(255,255,255,0.9);
+color:#14213d;
+font-size:1.6rem;
+font-weight:900;
+cursor:pointer;
+box-shadow:0 10px 24px rgba(15,23,42,0.18);
+transition:var(--transition);
+}
+.modal-close:hover{
+transform:scale(1.08) rotate(5deg);
+}
+.modal-image-wrap{
+position:relative;
+min-height:520px;
+overflow:hidden;
+background:#dbeafe;
+}
+.modal-image-wrap img{
+height:100%;
+width:100%;
+object-fit:cover;
+}
+.modal-image-label{
+position:absolute;
+left:20px;
+bottom:20px;
+background:rgba(255,255,255,0.92);
+color:#14213d;
+border-radius:999px;
+padding:10px 16px;
+font-weight:900;
+box-shadow:0 14px 30px rgba(15,23,42,0.18);
+}
