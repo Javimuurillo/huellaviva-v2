@@ -376,4 +376,34 @@ function renderCart() {
     // Dibuja el carrito y su total.
   renderCart();
   };
+}// Activa el recomendador: usa palabras clave para sugerir una mascota.
+function initMatch() {
+  const matchBtn = document.getElementById("matchBtn");
+  const profileText = document.getElementById("profileText");
+  const matchResult = document.getElementById("matchResult");
+  matchBtn.addEventListener("click", () => {
+    const text = profileText.value.toLowerCase().trim();
+    if (!text) {
+      matchResult.innerHTML = `<p class="empty">Escribe primero tu perfil para poder recomendarte una mascota.</p>`;
+      return;
+    }
+    let recommended;
+    if (text.includes("gato") || text.includes("piso") || text.includes("tranquilo")) {
+      recommended = pets.find(pet => pet.id === "luna");
+    } else if (text.includes("deporte") || text.includes("activo") || text.includes("correr")) {
+      recommended = pets.find(pet => pet.id === "max");
+    } else if (text.includes("niño") || text.includes("familia")) {
+      recommended = pets.find(pet => pet.id === "rocky");
+    } else {
+      recommended = pets.find(pet => pet.id === "buddy");
+    }
+    matchResult.innerHTML = `
+      <div class="result-card">
+        <h3>Tu match recomendado es ${recommended.name}</h3>
+        <p><strong>${recommended.breed}</strong> · ${recommended.age}</p>
+        <p>${recommended.temperament}</p>
+        <button class="btn primary" type="button" onclick="openPetModal('${recommended.id}')">Ver ficha</button>
+      </div>
+    `;
+  });
 }
