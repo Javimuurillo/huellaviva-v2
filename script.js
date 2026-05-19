@@ -147,3 +147,7 @@ function renderPets() {
   const petsGrid = document.getElementById("petsGrid");
   const searchInput = document.getElementById("petSearch");
   const filterButtons = document.querySelectorAll(".filter-btn");
+  // Función interna que repinta las mascotas cada vez que se busca o filtra.
+  const paint = () => {
+    const search = searchInput.value.toLowerCase().trim();
+    const favorites = getFavorites();
