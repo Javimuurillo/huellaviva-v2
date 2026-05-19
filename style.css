@@ -61,3 +61,5 @@ border-bottom:1px solid var(--border);
 transition:var(--transition);
 }
 .header.scrolled{box-shadow:0 10px 30px rgba(15,23,42,0.08);}
+/* Barra de navegación: coloca logo, enlaces y botón de tema en una fila. */
+.navbar{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
