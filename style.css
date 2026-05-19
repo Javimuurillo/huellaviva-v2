@@ -165,3 +165,6 @@ to{transform:rotate(360deg);}
 .feature-card span{font-size:2rem;}
 .feature-card h3,.objective h3{margin:12px 0 8px;}
 .feature-card p,.objective p{color:var(--muted);}
+/* Buscador y filtros de mascotas. */
+.controls{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:32px;justify-content:center;}
+.controls input,.status-search input{min-width:min(100%,360px);flex:1;max-width:480px;padding:15px 18px;border-radius:16px;border:1px solid var(--border);background:var(--surface);color:var(--text);font-size:1rem;outline:none;}
