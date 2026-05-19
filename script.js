@@ -28,3 +28,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initMatch();
   // Activa el formulario de voluntariado.
   initVolunteerForm();
+  // Activa la consulta de estado por email.
+  initStatusChecker();
