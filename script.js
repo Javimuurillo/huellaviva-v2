@@ -10,3 +10,9 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Activa el modo claro/oscuro y recuerda la elección del usuario.
   initTheme();
+   // Prepara el menú responsive para móvil.
+  initMenu();
+// Activa animaciones al hacer scroll y el botón de volver arriba.
+  initScrollEffects();
+   // Dibuja las tarjetas de mascotas disponibles.
+  renderPets();
