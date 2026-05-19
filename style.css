@@ -123,3 +123,10 @@ color:#fff;
 box-shadow:0 0 0 6px rgba(255,132,69,0.12);
 animation:iconSpin 4s linear infinite;
 }
+body.dark /* Etiqueta animada del inicio: destaca la feria de adopción. */
+.hero-pill{
+background:linear-gradient(135deg,rgba(255,132,69,0.24),rgba(255,255,255,0.06));
+color:#ff8a45;
+border-color:rgba(255,132,69,0.45);
+box-shadow:0 14px 35px rgba(255,132,69,0.16);
+}
