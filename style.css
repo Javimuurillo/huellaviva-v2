@@ -92,3 +92,34 @@ transition:var(--transition);
 .hero-card:hover img{transform:scale(1.08) rotate(1deg);}
 .floating-badge{position:absolute;bottom:22px;left:22px;background:var(--surface);color:var(--text);padding:14px 18px;border-radius:18px;font-weight:900;box-shadow:var(--shadow);}
 .eyebrow{text-transform:uppercase;color:var(--primary);font-weight:900;letter-spacing:0.18em;font-size:0.82rem;}
+/* Etiqueta animada del inicio: destaca la feria de adopción. */
+.hero-pill{
+display:inline-flex;
+align-items:center;
+gap:0.55rem;
+width:fit-content;
+margin:0 0 1rem;
+padding:0.62rem 1.2rem;
+border-radius:999px;
+background:linear-gradient(135deg,rgba(255,132,69,0.18),rgba(39,119,224,0.12));
+color:var(--primary);
+border:1px solid rgba(255,132,69,0.35);
+box-shadow:0 14px 35px rgba(255,132,69,0.18);
+text-transform:uppercase;
+letter-spacing:0.12em;
+font-size:0.82rem;
+font-weight:900;
+animation:pillFloat 2.8s ease-in-out infinite,pillGlow 3.5s ease-in-out infinite;
+}
+.hero-pill-icon{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+width:1.45rem;
+height:1.45rem;
+border-radius:50%;
+background:var(--primary);
+color:#fff;
+box-shadow:0 0 0 6px rgba(255,132,69,0.12);
+animation:iconSpin 4s linear infinite;
+}
