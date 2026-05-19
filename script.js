@@ -116,4 +116,21 @@ function initMenu() {
   navLinks.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => navLinks.classList.remove("open"));
   });
+
+  // Añade efectos al hacer scroll: cabecera fija, botón subir y animaciones reveal.
+function initScrollEffects() {
+  const header = document.getElementById("header");
+  const scrollTop = document.getElementById("scrollTop");
+  const revealElements = document.querySelectorAll(".reveal");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add("visible");
+    });
+  }, { threshold: 0.15 });
+  revealElements.forEach(element => observer.observe(element));
+  window.addEventListener("scroll", () => {
+    header.classList.toggle("scrolled", window.scrollY > 20);
+    scrollTop.classList.toggle("show", window.scrollY > 450);
+  });
+  scrollTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 }
