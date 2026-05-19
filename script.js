@@ -134,3 +134,7 @@ function initScrollEffects() {
   });
   scrollTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 }
+// Lee del navegador la lista de mascotas favoritas guardadas.
+function getFavorites() {
+  return JSON.parse(localStorage.getItem("huella-favorites")) || [];
+}
