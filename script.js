@@ -1,1 +1,7 @@
-hola
+/*
+  HUELLA VIVA - SCRIPT.JS
+  Este archivo contiene toda la parte interactiva de la página.
+  JavaScript se encarga de pintar mascotas, eventos y productos,
+  guardar datos en localStorage, abrir el panel de administración,
+  controlar el modo oscuro, el carrito y el chatbot.
+*/
