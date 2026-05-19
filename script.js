@@ -20,3 +20,5 @@ document.addEventListener("DOMContentLoaded", () => {
   renderEvents();
   // Carga productos añadidos desde administración.
   loadSavedAdminProducts();
+   // Dibuja los productos de la tienda.
+  renderProducts();
