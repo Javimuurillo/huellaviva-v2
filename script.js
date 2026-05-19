@@ -276,3 +276,20 @@ function renderProducts() {
     </article>
   `).join("");
 }
+// Genera una imagen de reserva si alguna imagen externa de producto falla.
+function getProductFallbackImage(category) {
+  const icon = category === "Comida" ? "🥣" : "🎾";
+  const svg = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="900" height="900" viewBox="0 0 900 900">
+      <defs>
+        <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#e6f1ff"/>
+          <stop offset="1" stop-color="#fff0e6"/>
+        </linearGradient>
+      </defs>
+      <rect width="900" height="900" rx="70" fill="url(#g)"/>
+      <text x="450" y="470" font-size="170" text-anchor="middle" dominant-baseline="middle">${icon}</text>
+      <text x="450" y="610" font-family="Arial" font-size="44" font-weight="700" text-anchor="middle" fill="#14213d">Producto solidario</text>
+    </svg>`;
+  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+}
