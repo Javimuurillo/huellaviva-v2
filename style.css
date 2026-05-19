@@ -350,3 +350,10 @@ hero-grid,.form-grid,/* Distribución de tienda: productos a un lado y carrito a
 .status-search /* Botones generales reutilizados en toda la página. */
 .btn{width:100%;}
 }
+/* Estilo general del cuerpo de la página. */
+body{
+background:
+radial-gradient(circle at top left,rgba(33,114,217,0.12),transparent 32%),
+radial-gradient(circle at bottom right,rgba(255,145,77,0.12),transparent 30%),
+var(--bg);
+}
