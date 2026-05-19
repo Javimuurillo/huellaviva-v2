@@ -22,3 +22,5 @@ document.addEventListener("DOMContentLoaded", () => {
   loadSavedAdminProducts();
    // Dibuja los productos de la tienda.
   renderProducts();
+  // Dibuja el carrito y su total.
+  renderCart();
