@@ -142,3 +142,8 @@ function getFavorites() {
 function saveFavorites(favorites) {
   localStorage.setItem("huella-favorites", JSON.stringify(favorites));
 }
+// Crea visualmente las tarjetas de mascotas y aplica buscador/filtros.
+function renderPets() {
+  const petsGrid = document.getElementById("petsGrid");
+  const searchInput = document.getElementById("petSearch");
+  const filterButtons = document.querySelectorAll(".filter-btn");
