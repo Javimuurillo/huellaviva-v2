@@ -175,3 +175,33 @@
       </div>
     </section>
   </main>
+  <!-- FOOTER: parte final de la web con el acceso a administración. -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>© 2026 Huella Viva. Todos los derechos reservados.</p>
+      <button class="footer-admin-link" id="adminAccess" type="button">Acceso Administración</button>
+    </div>
+  </footer>
+  <!-- LOGIN DE ADMINISTRACIÓN: pantalla privada que se muestra al pulsar Acceso Administración. -->
+  <section class="admin-screen hidden" id="adminLoginScreen" aria-label="Inicio de sesión administración">
+    <div class="admin-login-card">
+      <div class="admin-login-actions">
+        <button class="admin-back" id="adminLoginBack" type="button">← Volver a la web</button>
+        <button class="admin-theme-btn" type="button">🌙 Oscuro</button>
+      </div>
+      <div class="admin-login-icon">🐾</div>
+      <p class="eyebrow">Zona privada</p>
+      <h2>Acceso Administración</h2>
+      <p class="admin-help">Introduce tus credenciales para entrar al panel privado.</p>
+      <form id="adminLoginForm" class="admin-login-form">
+        <label>Usuario
+          <input type="text" id="adminUser" placeholder="Usuario" autocomplete="username" required>
+        </label>
+        <label>Contraseña
+          <input type="password" id="adminPassword" placeholder="Contraseña" autocomplete="current-password" required>
+        </label>
+        <button class="btn primary full" type="submit">Entrar al panel</button>
+        <p class="form-message" id="adminLoginMessage"></p>
+      </form>
+    </div>
+  </section>
