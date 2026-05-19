@@ -199,3 +199,31 @@ body{padding:20px;}
 .event-meta{color:var(--muted);font-weight:800;margin:8px 0 12px;display:flex;flex-wrap:wrap;gap:12px;}
 /* Distribución de tienda: productos a un lado y carrito al otro. */
 .shop-layout{display:grid;grid-template-columns:1fr 330px;gap:28px;align-items:start;}
+/* Carrito de compra simulado. */
+.cart{padding:24px;position:sticky;top:94px;}
+.cart h3{font-size:1.5rem;margin-bottom:16px;}
+.cart-item{display:grid;grid-template-columns:1fr auto;gap:10px;padding:12px 0;border-bottom:1px solid var(--border);}
+.cart-item small{color:var(--muted);}
+.qty-controls{display:flex;align-items:center;gap:6px;}
+.qty-controls button{width:28px;height:28px;border:0;border-radius:8px;cursor:pointer;background:var(--primary);color:white;font-weight:900;}
+.cart-total{display:flex;justify-content:space-between;align-items:center;padding:18px 0;font-size:1.2rem;}
+.empty{color:var(--muted);text-align:center;padding:20px 0;}
+/* Cajas del recomendador y consulta de estado. */
+.match-box,.status-box{padding:28px;}
+textarea,select,input{font-family:inherit;}
+.match-box textarea,.form-card textarea{width:100%;min-height:150px;resize:vertical;padding:16px;border-radius:18px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:1rem;outline:none;margin-bottom:16px;}
+.match-result{margin-top:18px;}
+.result-card{padding:18px;border-radius:18px;background:rgba(35,143,111,0.12);border:1px solid rgba(35,143,111,0.2);}
+/* Grid del formulario de voluntariado. */
+.form-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:46px;align-items:start;}
+/* Tarjeta que contiene formularios. */
+.form-card{padding:28px;display:grid;gap:16px;}
+.form-card label{display:grid;gap:8px;font-weight:900;}
+.form-card input,.form-card select{padding:14px 16px;border-radius:16px;border:1px solid var(--border);background:var(--bg);color:var(--text);outline:none;font-size:1rem;}
+.form-message{color:var(--accent);font-weight:900;min-height:24px;}
+.status-search{display:flex;gap:12px;flex-wrap:wrap;}
+.status-results{margin-top:20px;display:grid;gap:14px;}
+.status-card{background:var(--bg);border:1px solid var(--border);border-radius:18px;padding:16px;}
+.objectives-grid{grid-template-columns:repeat(7,1fr);}
+.objective{padding:22px;}
+.objective strong{width:38px;height:38px;border-radius:12px;background:var(--primary);color:white;display:grid;place-items:center;}
