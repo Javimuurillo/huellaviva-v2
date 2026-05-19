@@ -14,3 +14,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initMenu();
 // Activa animaciones al hacer scroll y el botón de volver arriba.
   initScrollEffects();
+   // Dibuja las tarjetas de mascotas disponibles.
+  renderPets();
