@@ -197,3 +197,5 @@ body{padding:20px;}
 .event-card img{height:100%;min-height:260px;object-fit:cover;}
 .event-content{padding:28px;}
 .event-meta{color:var(--muted);font-weight:800;margin:8px 0 12px;display:flex;flex-wrap:wrap;gap:12px;}
+/* Distribución de tienda: productos a un lado y carrito al otro. */
+.shop-layout{display:grid;grid-template-columns:1fr 330px;gap:28px;align-items:start;}
