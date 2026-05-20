@@ -1005,3 +1005,20 @@ body:not(.dark) .admin-title p,
 body:not(.dark) .admin-card-header p{
 color:#64748b;
 }
+body:not(.dark) .admin-stat-card,
+body:not(.dark) /* Tarjetas grandes internas del panel de administración. */
+.admin-card{
+background:rgba(255,255,255,0.92);
+border:1px solid rgba(20,33,61,0.10);
+box-shadow:0 18px 45px rgba(15,23,42,0.08);
+}
+body:not(.dark) .admin-card-header{
+background:linear-gradient(90deg,rgba(255,145,77,0.18),rgba(33,114,217,0.06));
+}
+body:not(.dark) .admin-stat-card small,
+body:not(.dark) .admin-table th,
+body:not(.dark) .admin-table td,
+body:not(.dark) .admin-empty,
+body:not(.dark) .admin-product-form label{
+color:#14213d;
+}
