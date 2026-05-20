@@ -1941,3 +1941,8 @@ border-radius:20px;
 background:rgba(33,114,217,0.08);
 border:1px solid rgba(33,114,217,0.16);
 }
+/* Tarjetas de datos en modo oscuro. */
+body.dark #petModal .pet-info-grid div{
+background:rgba(96,165,250,0.12);
+border-color:rgba(96,165,250,0.22);
+}
