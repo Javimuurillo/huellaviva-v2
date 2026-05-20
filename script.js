@@ -8,19 +8,19 @@
 
 // Esperamos a que cargue todo el HTML antes de ejecutar funciones.
 document.addEventListener("DOMContentLoaded", () => {
-    // Activa el modo claro/oscuro y recuerda la elección del usuario.
+  // Activa el modo claro/oscuro y recuerda la elección del usuario.
   initTheme();
-   // Prepara el menú responsive para móvil.
+  // Prepara el menú responsive para móvil.
   initMenu();
-// Activa animaciones al hacer scroll y el botón de volver arriba.
+  // Activa animaciones al hacer scroll y el botón de volver arriba.
   initScrollEffects();
-   // Dibuja las tarjetas de mascotas disponibles.
+  // Dibuja las tarjetas de mascotas disponibles.
   renderPets();
   // Dibuja las tarjetas de eventos.
   renderEvents();
   // Carga productos añadidos desde administración.
   loadSavedAdminProducts();
-   // Dibuja los productos de la tienda.
+  // Dibuja los productos de la tienda.
   renderProducts();
   // Dibuja el carrito y su total.
   renderCart();
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initVolunteerForm();
   // Activa la consulta de estado por email.
   initStatusChecker();
-   // Activa login y panel de administración.
+  // Activa login y panel de administración.
   initAdminPanel();
   // Activa el chatbot flotante.
   initChatbot();
@@ -103,8 +103,8 @@ function initTheme() {
   updateThemeButtons();
   if (themeBtn) themeBtn.addEventListener("click", toggleTheme);
   adminThemeButtons.forEach(button => button.addEventListener("click", toggleTheme));
-
-  // Controla el menú responsive: abre/cierra el menú en pantallas pequeñas.
+}
+// Controla el menú responsive: abre/cierra el menú en pantallas pequeñas.
 function initMenu() {
   const menuToggle = document.getElementById("menuToggle");
   const navLinks = document.getElementById("navLinks");
@@ -116,8 +116,8 @@ function initMenu() {
   navLinks.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => navLinks.classList.remove("open"));
   });
-
-  // Añade efectos al hacer scroll: cabecera fija, botón subir y animaciones reveal.
+}
+// Añade efectos al hacer scroll: cabecera fija, botón subir y animaciones reveal.
 function initScrollEffects() {
   const header = document.getElementById("header");
   const scrollTop = document.getElementById("scrollTop");
@@ -157,7 +157,7 @@ function renderPets() {
       const matchesType = currentPetFilter === "all" || pet.type === currentPetFilter;
       return matchesSearch && matchesType;
     });
-     // Convertimos cada mascota filtrada en una tarjeta HTML.
+    // Convertimos cada mascota filtrada en una tarjeta HTML.
     petsGrid.innerHTML = filteredPets.map((pet, index) => `
       <article class="pet-card reveal visible" style="animation-delay: ${index * 0.08}s">
         <img class="card-image" src="${pet.img}" alt="${pet.name}, ${pet.breed}">
@@ -352,7 +352,7 @@ function renderCart() {
     `;
   }).join("");
   cartTotal.textContent = formatMoney(total);
-   // Al finalizar compra, se crea un pedido simulado para verlo en Administración.
+  // Al finalizar compra, se crea un pedido simulado para verlo en Administración.
   checkoutBtn.onclick = () => {
     const customer = prompt("Introduce tu nombre para registrar el pedido:") || "Cliente invitado";
     const email = prompt("Introduce tu email para registrar el pedido:") || "sin-email@huellaviva.local";
@@ -373,7 +373,7 @@ function renderCart() {
     alert("Compra simulada realizada. El pedido aparece ahora en Administración > Tienda.");
     cart = [];
     saveCart();
-     // Dibuja el carrito y su total.
+    // Dibuja el carrito y su total.
   renderCart();
   };
 }
@@ -453,9 +453,10 @@ function initStatusChecker() {
     `).join("");
   });
 }
-// Pestaña activa del panel de administración.//
+
+// Pestaña activa del panel de administración.
 let currentAdminTab = "adopciones";
-// Prepara todos los botones, login y pestañas del panel de administración.//
+// Prepara todos los botones, login y pestañas del panel de administración.
 function initAdminPanel() {
   const adminAccess = document.getElementById("adminAccess");
   const adminLoginBack = document.getElementById("adminLoginBack");
@@ -468,7 +469,7 @@ function initAdminPanel() {
   adminLoginBack.addEventListener("click", showPublicWeb);
   adminBackFooter.addEventListener("click", showPublicWeb);
   adminExit.addEventListener("click", showPublicWeb);
-  // Validamos usuario y contraseña del panel privado.//
+  // Validamos usuario y contraseña del panel privado.
   adminLoginForm.addEventListener("submit", event => {
     event.preventDefault();
     const user = document.getElementById("adminUser").value.trim();
@@ -482,7 +483,7 @@ function initAdminPanel() {
       message.textContent = "Usuario o contraseña incorrectos.";
     }
   });
-   // Cada pestaña cambia el contenido que se ve dentro de administración.//
+  // Cada pestaña cambia el contenido que se ve dentro de administración.
   document.querySelectorAll(".admin-tab").forEach(tab => {
     tab.addEventListener("click", () => {
       currentAdminTab = tab.dataset.adminTab;
@@ -498,7 +499,7 @@ function initAdminPanel() {
     if (form) form.classList.toggle("hidden");
   });
 }
-// Oculta la web pública y muestra la pantalla de login de administración.//
+// Oculta la web pública y muestra la pantalla de login de administración.
 function showAdminLogin() {
   document.querySelector(".header").classList.add("hidden");
   document.querySelector("main").classList.add("hidden");
@@ -507,7 +508,7 @@ function showAdminLogin() {
   document.getElementById("adminLoginScreen").classList.remove("hidden");
   window.scrollTo({ top: 0, behavior: "instant" });
 }
-// Vuelve desde administración a la web pública.//
+// Vuelve desde administración a la web pública.
 function showPublicWeb() {
   document.querySelector(".header").classList.remove("hidden");
   document.querySelector("main").classList.remove("hidden");
@@ -516,22 +517,22 @@ function showPublicWeb() {
   document.getElementById("adminPanel").classList.add("hidden");
   window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
 }
-// Muestra el panel privado cuando el usuario y contraseña son correctos.//
+// Muestra el panel privado cuando el usuario y contraseña son correctos.
 function showAdminPanel() {
   document.getElementById("adminLoginScreen").classList.add("hidden");
   document.getElementById("adminPanel").classList.remove("hidden");
   renderAdminPanel();
   window.scrollTo({ top: 0, behavior: "instant" });
 }
-// Lee todas las solicitudes guardadas: adopciones y voluntariado.//
+// Lee todas las solicitudes guardadas: adopciones y voluntariado.
 function getRequests() {
   return JSON.parse(localStorage.getItem("huella-requests")) || [];
 }
-// Lee los pedidos simulados guardados desde la tienda.//
+// Lee los pedidos simulados guardados desde la tienda.
 function getOrders() {
   return JSON.parse(localStorage.getItem("huella-orders")) || [];
 }
-// Incorpora a la tienda los productos creados desde administración.//
+// Incorpora a la tienda los productos creados desde administración.
 function loadSavedAdminProducts() {
   const savedProducts = getAdminProducts();
   savedProducts.forEach(savedProduct => {
@@ -539,15 +540,15 @@ function loadSavedAdminProducts() {
     if (!alreadyExists) products.push(savedProduct);
   });
 }
-// Lee los productos creados desde el panel de administración.//
+// Lee los productos creados desde el panel de administración.
 function getAdminProducts() {
   return JSON.parse(localStorage.getItem("huella-admin-products")) || [];
 }
-// Guarda los productos nuevos creados desde administración.//
+// Guarda los productos nuevos creados desde administración.
 function saveAdminProducts(adminProducts) {
   localStorage.setItem("huella-admin-products", JSON.stringify(adminProducts));
 }
-// Decide qué contenido pintar según la pestaña activa del panel.//
+// Decide qué contenido pintar según la pestaña activa del panel.
 function renderAdminPanel() {
   const search = document.getElementById("adminSearch").value.toLowerCase().trim();
   const addButton = document.getElementById("adminAddProduct");
@@ -557,7 +558,7 @@ function renderAdminPanel() {
   if (currentAdminTab === "voluntarios") renderAdminVolunteers(search);
   if (currentAdminTab === "tienda") renderAdminShop(search);
 }
-// Calcula y muestra estadísticas de voluntarios, adopciones y pedidos.//
+// Calcula y muestra estadísticas de voluntarios, adopciones y pedidos.
 function renderAdminStats() {
   const stats = document.getElementById("adminStats");
   const requests = getRequests();
@@ -570,7 +571,7 @@ function renderAdminStats() {
     <article class="admin-stat-card"><small>Pedidos tienda</small><strong>${orderCount}</strong></article>
   `;
 }
-// Muestra la tabla de solicitudes de adopción y sus botones de aprobar/rechazar.//
+// Muestra la tabla de solicitudes de adopción y sus botones de aprobar/rechazar.
 function renderAdminAdoptions(search) {
   const content = document.getElementById("adminContent");
   const requests = getRequests()
@@ -605,7 +606,7 @@ function renderAdminAdoptions(search) {
     </section>
   `;
 }
-// Muestra solicitudes de voluntariado y lista de voluntarios aceptados.//
+// Muestra solicitudes de voluntariado y lista de voluntarios aceptados.
 function renderAdminVolunteers(search) {
   const content = document.getElementById("adminContent");
   const allVolunteerRequests = getRequests()
@@ -666,7 +667,7 @@ function renderAdminVolunteers(search) {
     </section>
   `;
 }
-// Muestra pedidos de tienda, inventario y formulario para añadir productos.//
+// Muestra pedidos de tienda, inventario y formulario para añadir productos.
 function renderAdminShop(search) {
   const content = document.getElementById("adminContent");
   const orders = getOrders().filter(order => adminMatchesSearch(order, search));
@@ -724,12 +725,12 @@ function renderAdminShop(search) {
   `;
   document.getElementById("adminProductForm").addEventListener("submit", createAdminProduct);
 }
-// Comprueba si un elemento coincide con el texto escrito en el buscador del admin.//
+// Comprueba si un elemento coincide con el texto escrito en el buscador del admin.
 function adminMatchesSearch(item, search) {
   if (!search) return true;
   return JSON.stringify(item).toLowerCase().includes(search);
 }
-// Cambia el estado de una solicitud: Aprobada, Rechazada o Aceptada.//
+// Cambia el estado de una solicitud: Aprobada, Rechazada o Aceptada.
 function updateRequestStatus(requestId, newStatus) {
   const requests = getRequests();
   const realIndex = requests.findIndex((request, index) => (request.id || index) === requestId);
@@ -739,14 +740,14 @@ function updateRequestStatus(requestId, newStatus) {
     renderAdminPanel();
   }
 }
-// Elimina una solicitud, por ejemplo al quitar un voluntario aceptado.//
+// Elimina una solicitud, por ejemplo al quitar un voluntario aceptado.
 function deleteRequest(requestId) {
   const requests = getRequests();
   const filteredRequests = requests.filter((request, index) => (request.id || index) !== requestId);
   localStorage.setItem("huella-requests", JSON.stringify(filteredRequests));
   renderAdminPanel();
 }
-// Cambia un pedido de la tienda a estado Enviado.//
+// Cambia un pedido de la tienda a estado Enviado.
 function markOrderSent(orderId) {
   const orders = getOrders();
   const order = orders.find(item => item.id === orderId);
@@ -756,7 +757,7 @@ function markOrderSent(orderId) {
     renderAdminPanel();
   }
 }
-// Crea un producto nuevo desde administración y lo añade a la tienda.//
+// Crea un producto nuevo desde administración y lo añade a la tienda.
 function createAdminProduct(event) {
   event.preventDefault();
   const adminProducts = getAdminProducts();
@@ -771,12 +772,12 @@ function createAdminProduct(event) {
   adminProducts.push(newProduct);
   saveAdminProducts(adminProducts);
   products.push(newProduct);
-  // Dibuja los productos de la tienda.//
+  // Dibuja los productos de la tienda.
   renderProducts();
   renderAdminPanel();
   alert("Producto añadido correctamente a la tienda.");
 }
-// Activa el chatbot: abrir/cerrar ventana, enviar mensajes y responder.//
+// Activa el chatbot: abrir/cerrar ventana, enviar mensajes y responder.
 function initChatbot() {
   const chatbot = document.getElementById("chatbot");
   const chatbotToggle = document.getElementById("chatbotToggle");
@@ -811,7 +812,7 @@ function initChatbot() {
       addChatMessage("bot", answer);
     }, 350);
   });
-// Función interna que añade un mensaje nuevo al chat.
+  // Función interna que añade un mensaje nuevo al chat.
   function addChatMessage(type, text) {
     const message = document.createElement("div");
     message.className = `chat-message ${type}`;
