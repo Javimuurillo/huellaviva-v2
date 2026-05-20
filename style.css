@@ -898,3 +898,26 @@ to{opacity:1;transform:translateY(0) scale(1);}
 .admin-toolbar input{max-width:none;}
 .admin-product-form{grid-template-columns:1fr;}
 }
+.table-actions{
+display:flex;
+align-items:center;
+gap:10px;
+flex-wrap:wrap;
+}
+.table-action.danger{
+border-color:rgba(255,90,90,0.38);
+color:#ffb3b3;
+}
+.table-action.danger:hover{
+background:#ff5a5a;
+color:#170807;
+border-color:#ff5a5a;
+}
+.admin-login-actions{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:12px;
+flex-wrap:wrap;
+margin-bottom:22px;
+}
