@@ -1557,3 +1557,41 @@ body.dark .badge{
 #petsGrid .card-body{
   flex:1;
 }
+
+/* Mejora las tarjetas de productos para que todas se vean iguales. */
+.product-card{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  min-height:100%;
+}
+
+/* Da un tamaño fijo y limpio a la imagen del producto. */
+.product-image-wrap{
+  height:230px;
+  overflow:hidden;
+  border-bottom:1px solid var(--border);
+}
+
+/* La imagen del producto rellena bien el hueco sin deformarse. */
+.product-image-wrap img{
+  height:100%;
+  width:100%;
+  object-fit:cover;
+}
+
+/* El cuerpo de producto se estira para que precio y botón queden abajo alineados. */
+.product-body{
+  flex:1;
+  padding:22px;
+}
+
+/* Mejora el bloque inferior de precio y botón de añadir. */
+.product-bottom{
+  margin-top:auto;
+  padding-top:16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+}
