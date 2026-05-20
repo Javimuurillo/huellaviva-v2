@@ -605,5 +605,66 @@ function renderAdminAdoptions(search) {
     </section>
   `;
 }
+// Muestra solicitudes de voluntariado y lista de voluntarios aceptados.
+function renderAdminVolunteers(search) {
+  const content = document.getElementById("adminContent");
+  const allVolunteerRequests = getRequests()
+    .filter(request => request.type === "Voluntariado")
+    .filter(request => adminMatchesSearch(request, search));
+  const pendingRequests = allVolunteerRequests.filter(request => request.status !== "Aceptada" && request.status !== "Rechazada");
+  const acceptedRequests = allVolunteerRequests.filter(request => request.status === "Aceptada");
+  content.innerHTML = `
+    <section class="admin-card">
+      <div class="admin-card-header">
+        <h2>👥 Solicitudes de Voluntariado</h2>
+        <p>Pendientes de aprobación.</p>
+      </div>
+      <div class="admin-table-wrap">
+        <table class="admin-table">
+          <thead><tr><th>Postulante</th><th>Contacto</th><th>Disponibilidad</th><th>Estado</th><th>Acción</th></tr></thead>
+          <tbody>
+            ${pendingRequests.length ? pendingRequests.map((request, index) => `
+              <tr>
+                <td>${request.name || "Sin nombre"}</td>
+                <td>${request.email}</td>
+                <td>${request.availability || "No indicada"}</td>
+                <td><span class="status-pill">${request.status}</span></td>
+                <td>
+                  <div class="table-actions">
+                    <button class="table-action" onclick="updateRequestStatus(${request.id || index}, 'Aceptada')">Aceptar</button>
+                    <button class="table-action danger" onclick="updateRequestStatus(${request.id || index}, 'Rechazada')">Rechazar</button>
+                  </div>
+                </td>
+              </tr>`).join("") : `<tr><td colspan="5" class="admin-empty">No hay solicitudes pendientes.</td></tr>`}
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section class="admin-card">
+      <div class="admin-card-header">
+        <h2 style="color:#19a64a">✅ Lista de Voluntarios Aceptados</h2>
+        <p>Colaboradores activos del refugio.</p>
+      </div>
+      <div class="admin-table-wrap">
+        <table class="admin-table">
+          <thead><tr><th>Nombre</th><th>Contacto</th><th>Acciones</th></tr></thead>
+          <tbody>
+            ${acceptedRequests.length ? acceptedRequests.map((request, index) => `
+              <tr>
+                <td>${request.name}</td>
+                <td>${request.email}</td>
+                <td>
+                  <div class="table-actions">
+                    <span class="status-pill">Activo</span>
+                    <button class="table-action danger" onclick="deleteRequest(${request.id || index})">Quitar</button>
+                  </div>
+                </td>
+              </tr>`).join("") : `<tr><td colspan="3" class="admin-empty">Sin voluntarios activos.</td></tr>`}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  `;
+}
 
 
