@@ -1671,3 +1671,103 @@ body.dark .cart{
   width:max-content;
   max-width:100%;
 }
+
+/* En modo oscuro los datos de los eventos se ven más modernos. */
+body.dark .event-meta{
+  background:rgba(96,165,250,0.11);
+  border-color:rgba(96,165,250,0.18);
+}
+
+/* En tablets, la tienda pasa a una columna para que no se corte el carrito. */
+@media (max-width:1100px){
+  .shop-layout{
+    grid-template-columns:1fr;
+  }
+
+  .cart{
+    position:static;
+  }
+}
+
+/* En móviles, las tarjetas reducen alturas y mantienen buen espacio. */
+@media (max-width:760px){
+  .card-body,
+  .product-body{
+    padding:20px;
+  }
+
+  .pet-card .card-image,
+  .product-image-wrap{
+    height:215px;
+  }
+
+  .event-card{
+    grid-template-columns:1fr;
+  }
+
+  .event-content{
+    padding:24px;
+  }
+
+  .event-meta{
+    width:100%;
+  }
+}
+
+/* ==============================================================
+   CORRECCIÓN FINAL: PRODUCTOS SIN BOTONES CORTADOS
+   Estas reglas hacen que la tienda tenga tarjetas más anchas,
+   que el botón Añadir siempre se vea completo y que el carrito
+   mantenga una posición limpia sin tapar ningún producto.
+   ============================================================== */
+
+/* La zona de tienda queda dividida en productos + carrito, pero dejando espacio real a las tarjetas. */
+.shop-layout{
+  grid-template-columns:minmax(0,1fr) 360px;
+  gap:36px;
+  align-items:start;
+}
+
+/* La cuadrícula de productos usa 3 columnas en ordenador para que cada tarjeta tenga anchura suficiente. */
+#productsGrid.cards-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(220px,1fr));
+  gap:28px;
+  align-items:stretch;
+}
+
+/* Cada tarjeta de producto puede ajustar su contenido sin cortar texto ni botones. */
+#productsGrid .product-card{
+  min-width:0;
+  overflow:hidden;
+  border-radius:26px;
+}
+
+/* El cuerpo del producto se organiza en columna para que precio y botón bajen al final. */
+#productsGrid .product-body{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+/* El título puede partirse en varias líneas y no empuja el botón fuera de la tarjeta. */
+#productsGrid .product-body h3{
+  overflow-wrap:anywhere;
+}
+
+/* El bloque inferior se puede reorganizar si falta espacio, evitando que el botón se corte. */
+#productsGrid .product-bottom{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+  width:100%;
+}
+
+/* El precio no se deforma y mantiene su tamaño visual. */
+#productsGrid .price{
+  flex:0 0 auto;
+  white-space:nowrap;
+}
