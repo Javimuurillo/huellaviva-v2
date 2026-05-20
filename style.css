@@ -1962,3 +1962,11 @@ display:block;
 color:var(--text);
 font-size:1rem;
 }
+/* Caja de cuidados principales con color verde suave. */
+#petModal .care-box{
+padding:18px;
+border-radius:22px;
+background:linear-gradient(135deg,rgba(35,143,111,0.13),rgba(33,114,217,0.08));
+border:1px solid rgba(35,143,111,0.22);
+}
+  
