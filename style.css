@@ -1595,3 +1595,79 @@ body.dark .badge{
   justify-content:space-between;
   gap:14px;
 }
+
+/* Da más importancia visual al precio. */
+.price{
+  font-size:1.35rem;
+  font-weight:900;
+  letter-spacing:-0.02em;
+}
+
+/* El botón Añadir queda tipo píldora y no se corta. */
+.product-bottom .btn{
+  border-radius:999px;
+  padding:12px 20px;
+  min-width:92px;
+  white-space:nowrap;
+}
+
+/* El carrito se ve como una tarjeta premium y no queda tan simple. */
+.cart{
+  border-radius:30px;
+  padding:28px;
+  box-shadow:0 22px 55px rgba(15,23,42,0.12);
+}
+
+/* En modo oscuro el carrito tiene más contraste y borde más fino. */
+body.dark .cart{
+  background:linear-gradient(180deg,#1a2942,#111c30);
+  border-color:rgba(148,163,184,0.24);
+}
+
+/* Mejora el título del carrito. */
+.cart h3{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:1.55rem;
+}
+
+/* Mejora la tarjeta de próximos eventos con un diseño más editorial. */
+.event-card{
+  border-radius:32px;
+  grid-template-columns:360px 1fr;
+  position:relative;
+}
+
+/* Imagen de evento con recorte limpio. */
+.event-card img{
+  height:100%;
+  min-height:285px;
+  object-fit:cover;
+}
+
+/* Contenido interno de evento más aireado. */
+.event-content{
+  padding:32px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:10px;
+}
+
+/* Título del evento más visible. */
+.event-content h3{
+  font-size:clamp(1.5rem,2.5vw,2rem);
+  line-height:1.1;
+  letter-spacing:-0.03em;
+}
+
+/* Datos de fecha, hora y ubicación en formato claro. */
+.event-meta{
+  background:rgba(33,114,217,0.07);
+  border:1px solid var(--border);
+  padding:10px 12px;
+  border-radius:16px;
+  width:max-content;
+  max-width:100%;
+}
