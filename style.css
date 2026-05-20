@@ -711,3 +711,177 @@ min-height:100vh;
 background:#100b08;
 color:#fff7ed;
 }
+/* Barra superior del panel de administración. */
+.admin-topbar{
+height:64px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:18px;
+padding:0 min(44px,4vw);
+background:rgba(16,11,8,0.94);
+border-bottom:1px solid rgba(255,145,77,0.18);
+position:sticky;
+top:0;
+z-index:80;
+backdrop-filter:blur(14px);
+}
+.admin-brand{display:flex;align-items:center;gap:12px;color:var(--orange);font-size:1.15rem;}
+.admin-logo{
+width:42px;
+height:42px;
+display:grid;
+place-items:center;
+background:linear-gradient(135deg,#ff914d,#ffc08d);
+border-radius:16px;
+}
+/* Pestañas del panel: adopciones, voluntarios y tienda. */
+.admin-tabs{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.admin-tab,
+.admin-exit,
+.admin-add-product,
+/* Botones de acción dentro de las tablas. */
+.table-action{
+border:1px solid rgba(255,145,77,0.25);
+background:transparent;
+color:#fff7ed;
+border-radius:14px;
+padding:11px 16px;
+font-weight:900;
+cursor:pointer;
+transition:var(--transition);
+}
+.admin-tab:hover,
+.admin-tab.active,
+.admin-add-product,
+.admin-exit:hover,
+.table-action:hover{
+background:var(--orange);
+color:#1b0e07;
+transform:translateY(-2px);
+}
+.admin-exit{color:var(--orange);}
+/* Zona principal del panel de administración. */
+.admin-main{padding:46px 0 64px;}
+.admin-title{
+display:flex;
+align-items:center;
+gap:14px;
+margin-bottom:38px;
+}
+.admin-title span{color:var(--orange);font-size:2.2rem;}
+.admin-title h1{color:var(--orange);font-size:clamp(2rem,5vw,3.1rem);line-height:1;}
+.admin-title p{color:#f4d7c5;}
+/* Tarjetas de estadísticas del panel. */
+.admin-stats{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:22px;
+margin-bottom:34px;
+}
+.admin-stat-card{
+background:#1d120d;
+border:1px solid rgba(255,145,77,0.10);
+border-radius:14px;
+padding:24px;
+min-height:102px;
+}
+.admin-stat-card small{
+color:rgba(255,255,255,0.62);
+text-transform:uppercase;
+font-weight:900;
+}
+.admin-stat-card strong{
+display:block;
+font-size:2rem;
+margin-top:4px;
+}
+.admin-toolbar{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:16px;
+margin-bottom:30px;
+}
+.admin-toolbar input{max-width:430px;background:#1d120d;}
+/* Tarjetas grandes internas del panel de administración. */
+.admin-card{
+background:#1a100c;
+border:1px solid rgba(255,145,77,0.12);
+border-radius:14px;
+overflow:hidden;
+margin-bottom:26px;
+}
+.admin-card-header{
+padding:22px;
+background:linear-gradient(90deg,rgba(255,145,77,0.12),transparent);
+}
+.admin-card-header h2{
+color:var(--orange);
+font-size:1.25rem;
+display:flex;
+align-items:center;
+gap:8px;
+}
+.admin-card-header p{color:#f4d7c5;margin-top:4px;}
+.admin-table-wrap{overflow-x:auto;}
+/* Tablas de administración. */
+.admin-table{
+width:100%;
+border-collapse:collapse;
+min-width:700px;
+}
+.admin-table th,
+.admin-table td{
+padding:15px;
+border-bottom:1px solid rgba(255,145,77,0.13);
+text-align:left;
+vertical-align:top;
+}
+.admin-table th{color:#ffe5d1;font-size:0.9rem;}
+.admin-table td{color:#fff7ed;}
+.admin-empty{
+text-align:center;
+padding:36px;
+font-weight:900;
+color:white;
+}
+.status-pill{
+display:inline-flex;
+border-radius:999px;
+padding:6px 10px;
+background:rgba(255,145,77,0.16);
+color:#ffb079;
+font-weight:900;
+font-size:0.82rem;
+}
+.admin-product-form{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:14px;
+padding:22px;
+background:rgba(255,255,255,0.03);
+border-bottom:1px solid rgba(255,145,77,0.10);
+}
+.admin-product-form label{display:grid;gap:7px;font-weight:900;color:#ffe5d1;}
+.admin-product-form textarea{min-height:92px;resize:vertical;}
+.admin-product-form .wide{grid-column:1 / -1;}
+.admin-footer{
+border-top:1px solid rgba(255,145,77,0.18);
+text-align:center;
+padding:28px 16px 34px;
+color:#fff7ed;
+}
+.admin-footer p{margin-bottom:10px;}
+.admin-footer /* Botón del footer que abre el acceso de administración. */
+.footer-admin-link{
+color:#fff7ed;
+border-color:rgba(255,145,77,0.45);
+}
+.admin-footer .footer-admin-link:hover{
+color:#1b0e07;
+}
+@keyframes popIn{
+from{opacity:0;transform:translateY(16px) scale(0.96);}
+to{opacity:1;transform:translateY(0) scale(1);}
+}
