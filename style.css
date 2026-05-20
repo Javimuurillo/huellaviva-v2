@@ -1057,3 +1057,40 @@ background:rgba(255,255,255,0.08);
 border:1px solid rgba(255,255,255,0.14);
 color:#fff7ed;
 }
+body.dark .admin-help{
+color:rgba(255,255,255,0.75);
+}
+body.dark .admin-back{
+color:#fff7ed;
+border-color:rgba(255,255,255,0.18);
+background:transparent;
+}
+body.dark /* Panel completo de administración. */
+.admin-panel{
+background:#100b08;
+color:#fff7ed;
+}
+body.dark /* Barra superior del panel de administración. */
+.admin-topbar{
+background:rgba(16,11,8,0.94);
+border-bottom:1px solid rgba(255,145,77,0.18);
+}
+body.dark .admin-stat-card{
+background:#1d120d;
+}
+body.dark /* Tarjetas grandes internas del panel de administración. */
+.admin-card{
+background:#1a100c;
+}
+body.dark .admin-toolbar input{
+background:#1d120d;
+}
+body.dark .admin-footer{
+background:#100b08;
+}
+/* Responsive para tablets y móviles grandes. */
+@media (max-width:900px){
+.admin-top-actions{
+justify-content:center;
+flex-wrap:wrap;
+}
