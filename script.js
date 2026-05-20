@@ -453,4 +453,34 @@ function initStatusChecker() {
     `).join("");
   });
 }
+// Pestaña activa del panel de administración.
+let currentAdminTab = "adopciones";
+// Prepara todos los botones, login y pestañas del panel de administración.
+function initAdminPanel() {
+  const adminAccess = document.getElementById("adminAccess");
+  const adminLoginBack = document.getElementById("adminLoginBack");
+  const adminBackFooter = document.getElementById("adminBackFooter");
+  const adminExit = document.getElementById("adminExit");
+  const adminLoginForm = document.getElementById("adminLoginForm");
+  const adminSearch = document.getElementById("adminSearch");
+  const adminAddProduct = document.getElementById("adminAddProduct");
+  adminAccess.addEventListener("click", showAdminLogin);
+  adminLoginBack.addEventListener("click", showPublicWeb);
+  adminBackFooter.addEventListener("click", showPublicWeb);
+  adminExit.addEventListener("click", showPublicWeb);
+  // Validamos usuario y contraseña del panel privado.
+  adminLoginForm.addEventListener("submit", event => {
+    event.preventDefault();
+    const user = document.getElementById("adminUser").value.trim();
+    const password = document.getElementById("adminPassword").value.trim();
+    const message = document.getElementById("adminLoginMessage");
+    if (user === "admin" && password === "peludito203") {
+      message.textContent = "";
+      localStorage.setItem("huella-admin-logged", "true");
+      showAdminPanel();
+    } else {
+      message.textContent = "Usuario o contraseña incorrectos.";
+    }
+  });
+ 
 
