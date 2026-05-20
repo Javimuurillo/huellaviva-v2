@@ -811,4 +811,38 @@ function initChatbot() {
       addChatMessage("bot", answer);
     }, 350);
   });
-
+// Función interna que añade un mensaje nuevo al chat.
+  function addChatMessage(type, text) {
+    const message = document.createElement("div");
+    message.className = `chat-message ${type}`;
+    message.textContent = text;
+    chatbotMessages.appendChild(message);
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+  }
+}
+// Devuelve una respuesta automática según palabras clave del mensaje del usuario.
+function getChatbotAnswer(text) {
+  const message = text.toLowerCase();
+  if (message.includes("adop") || message.includes("mascota") || message.includes("perro") || message.includes("gato")) {
+    return "🐶🐱 En Huella Viva tenemos mascotas esperando un hogar. Entra en la sección de adopciones, pulsa en ‘Ver ficha’ y rellena el formulario para comenzar el proceso.";
+  }
+  if (message.includes("volunt") || message.includes("ayudar") || message.includes("colaborar")) {
+    return "🤝 ¡Gracias por querer ayudar! Puedes apuntarte desde el apartado de voluntariado indicando tu nombre, correo y disponibilidad.";
+  }
+  if (message.includes("tienda") || message.includes("compr") || message.includes("producto") || message.includes("carrito")) {
+    return "🛍️ Tenemos una tienda solidaria con comida, juguetes y accesorios. Puedes añadir productos al carrito y finalizar una compra simulada.";
+  }
+  if (message.includes("evento") || message.includes("actividad") || message.includes("feria") || message.includes("caminata")) {
+    return "📅 En la sección de eventos puedes ver actividades solidarias como caminatas, ferias de adopción y talleres educativos.";
+  }
+  if (message.includes("estado") || message.includes("solicitud") || message.includes("email") || message.includes("correo")) {
+    return "🔎 Para consultar una solicitud, entra en ‘Estado’ y escribe el mismo correo que usaste en adopción o voluntariado.";
+  }
+  if (message.includes("admin") || message.includes("administración") || message.includes("panel")) {
+    return "🔐 El acceso a administración está al final de la web. Desde ahí se gestionan adopciones, voluntarios y pedidos de la tienda.";
+  }
+  if (message.includes("objetivo") || message.includes("commits") || message.includes("código") || message.includes("codigo")) {
+    return "💻 El proyecto cumple los objetivos porque usa HTML, CSS y JavaScript, tiene código comentado, funciones explicables y una sección preparada para defender el trabajo.";
+  }
+  return "😊 Puedo ayudarte con adopciones, voluntariado, tienda, eventos, estado de solicitudes o administración. Prueba a escribirme: ‘adopción’, ‘tienda’ o ‘voluntariado’.";
+}
