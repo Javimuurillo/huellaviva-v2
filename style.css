@@ -1904,4 +1904,10 @@ flex-direction:column;
 justify-content:center;
 overflow:auto;
 }
-  
+  /* Texto pequeño superior de la ficha. */
+#petModal .eyebrow{
+margin-bottom:8px;
+color:var(--primary);
+letter-spacing:0.22em;
+font-size:0.82rem;
+}
