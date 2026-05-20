@@ -1911,3 +1911,12 @@ color:var(--primary);
 letter-spacing:0.22em;
 font-size:0.82rem;
 }
+/* Nombre de la mascota: grande, pero sin romper el diseño. */
+#petModal .modal-body h2{
+margin:0 0 14px;
+font-size:clamp(3rem,6vw,5.4rem);
+line-height:0.9;
+letter-spacing:-0.06em;
+color:var(--text);
+}
+  
