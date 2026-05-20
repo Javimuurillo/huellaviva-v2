@@ -1807,13 +1807,13 @@ grid-template-columns:repeat(2,minmax(220px,1fr));
 
 /* En móviles se muestra un producto por fila, mucho más cómodo de leer. */
 @media (max-width:560px){
-#productsGrid.cards-grid{
-grid-template-columns:1fr;
-}
+  #productsGrid.cards-grid{
+    grid-template-columns:1fr;
+  }
 
-#productsGrid .product-bottom .btn{
-width:100%;
-}
+  #productsGrid .product-bottom .btn{
+    width:100%;
+  }
 }
 /* Ventana general del modal: centrada, grande pero sin salirse de pantalla. */
 #petModal.modal{
