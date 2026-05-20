@@ -666,5 +666,63 @@ function renderAdminVolunteers(search) {
     </section>
   `;
 }
+// Muestra pedidos de tienda, inventario y formulario para añadir productos.
+function renderAdminShop(search) {
+  const content = document.getElementById("adminContent");
+  const orders = getOrders().filter(order => adminMatchesSearch(order, search));
+  const allProducts = products.filter(product => adminMatchesSearch(product, search));
+  content.innerHTML = `
+    <section class="admin-card">
+      <form class="admin-product-form hidden" id="adminProductForm">
+        <label>Producto<input id="newProductName" type="text" placeholder="Nombre del producto" required></label>
+        <label>Precio<input id="newProductPrice" type="number" step="0.01" placeholder="12.99" required></label>
+        <label>Categoría<input id="newProductCategory" type="text" placeholder="Comida / Juguetes" required></label>
+        <label>Imagen URL<input id="newProductImage" type="url" placeholder="https://..."></label>
+        <label class="wide">Descripción<textarea id="newProductDescription" placeholder="Descripción breve del producto" required></textarea></label>
+        <button class="btn primary full wide" type="submit">Guardar producto</button>
+      </form>
+      <div class="admin-card-header">
+        <h2>🛍️ Pedidos de la Tienda</h2>
+        <p>Pedidos generados al finalizar una compra simulada.</p>
+      </div>
+      <div class="admin-table-wrap">
+        <table class="admin-table">
+          <thead><tr><th>Cliente</th><th>Total</th><th>Productos</th><th>Estado</th><th>Acción</th></tr></thead>
+          <tbody>
+            ${orders.length ? orders.map(order => `
+              <tr>
+                <td>${order.customer}<br><small>${order.email}</small></td>
+                <td>${formatMoney(order.total)}</td>
+                <td>${order.items.join("<br>")}</td>
+                <td><span class="status-pill">${order.status}</span></td>
+                <td><button class="table-action" onclick="markOrderSent(${order.id})">Marcar enviado</button></td>
+              </tr>`).join("") : `<tr><td colspan="5" class="admin-empty">Sin pedidos.</td></tr>`}
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section class="admin-card">
+      <div class="admin-card-header">
+        <h2 style="color:#19a64a">📦 Inventario de Stock</h2>
+        <p>Productos disponibles en la tienda solidaria.</p>
+      </div>
+      <div class="admin-table-wrap">
+        <table class="admin-table">
+          <thead><tr><th>Producto</th><th>Precio</th><th>Stock Actual</th><th>Acciones</th></tr></thead>
+          <tbody>
+            ${allProducts.length ? allProducts.map(product => `
+              <tr>
+                <td>${product.name}<br><small>${product.category}</small></td>
+                <td>${formatMoney(product.price)}</td>
+                <td>Disponible</td>
+                <td><span class="status-pill">Visible</span></td>
+              </tr>`).join("") : `<tr><td colspan="4" class="admin-empty">Sin productos.</td></tr>`}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  `;
+  document.getElementById("adminProductForm").addEventListener("submit", createAdminProduct);
+}
 
 
