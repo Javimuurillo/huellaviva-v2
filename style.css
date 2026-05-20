@@ -1871,3 +1871,11 @@ object-position:center;
 transform:scale(1.01);
 animation:modalImageEnter 0.7s ease both;
 }
+/* Capa degradada sobre la imagen para que la etiqueta inferior se lea mejor. */
+#petModal .modal-image-wrap::after{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,0.36));
+pointer-events:none;
+}
