@@ -1022,3 +1022,38 @@ body:not(.dark) .admin-empty,
 body:not(.dark) .admin-product-form label{
 color:#14213d;
 }
+body:not(.dark) .admin-table th,
+body:not(.dark) .admin-table td{
+border-bottom:1px solid rgba(20,33,61,0.10);
+}
+body:not(.dark) .status-pill{
+background:rgba(255,145,77,0.16);
+color:#9a4a16;
+}
+body:not(.dark) .admin-product-form{
+background:rgba(33,114,217,0.04);
+border-bottom:1px solid rgba(20,33,61,0.10);
+}
+body:not(.dark) .admin-footer{
+color:#14213d;
+border-top:1px solid rgba(20,33,61,0.10);
+background:rgba(255,255,255,0.72);
+}
+body:not(.dark) .admin-footer /* Botón del footer que abre el acceso de administración. */
+.footer-admin-link{
+color:#14213d;
+}
+body.dark /* Pantalla de login de administración. */
+.admin-screen{
+background:
+radial-gradient(circle at top left,rgba(255,145,77,0.20),transparent 32%),
+radial-gradient(circle at bottom right,rgba(96,165,250,0.16),transparent 28%),
+#0f0a07;
+color:#fff7ed;
+}
+body.dark /* Tarjeta central del login privado. */
+.admin-login-card{
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.14);
+color:#fff7ed;
+}
