@@ -482,5 +482,128 @@ function initAdminPanel() {
       message.textContent = "Usuario o contraseña incorrectos.";
     }
   });
- 
+   // Cada pestaña cambia el contenido que se ve dentro de administración.
+  document.querySelectorAll(".admin-tab").forEach(tab => {
+    tab.addEventListener("click", () => {
+      currentAdminTab = tab.dataset.adminTab;
+      document.querySelectorAll(".admin-tab").forEach(btn => btn.classList.remove("active"));
+      tab.classList.add("active");
+      adminSearch.value = "";
+      renderAdminPanel();
+    });
+  });
+  adminSearch.addEventListener("input", renderAdminPanel);
+  adminAddProduct.addEventListener("click", () => {
+    const form = document.getElementById("adminProductForm");
+    if (form) form.classList.toggle("hidden");
+  });
+}
+// Oculta la web pública y muestra la pantalla de login de administración.
+function showAdminLogin() {
+  document.querySelector(".header").classList.add("hidden");
+  document.querySelector("main").classList.add("hidden");
+  document.querySelector(".footer").classList.add("hidden");
+  document.getElementById("adminPanel").classList.add("hidden");
+  document.getElementById("adminLoginScreen").classList.remove("hidden");
+  window.scrollTo({ top: 0, behavior: "instant" });
+}
+// Vuelve desde administración a la web pública.
+function showPublicWeb() {
+  document.querySelector(".header").classList.remove("hidden");
+  document.querySelector("main").classList.remove("hidden");
+  document.querySelector(".footer").classList.remove("hidden");
+  document.getElementById("adminLoginScreen").classList.add("hidden");
+  document.getElementById("adminPanel").classList.add("hidden");
+  window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+}
+// Muestra el panel privado cuando el usuario y contraseña son correctos.
+function showAdminPanel() {
+  document.getElementById("adminLoginScreen").classList.add("hidden");
+  document.getElementById("adminPanel").classList.remove("hidden");
+  renderAdminPanel();
+  window.scrollTo({ top: 0, behavior: "instant" });
+}
+// Lee todas las solicitudes guardadas: adopciones y voluntariado.
+function getRequests() {
+  return JSON.parse(localStorage.getItem("huella-requests")) || [];
+}
+// Lee los pedidos simulados guardados desde la tienda.
+function getOrders() {
+  return JSON.parse(localStorage.getItem("huella-orders")) || [];
+}
+// Incorpora a la tienda los productos creados desde administración.
+function loadSavedAdminProducts() {
+  const savedProducts = getAdminProducts();
+  savedProducts.forEach(savedProduct => {
+    const alreadyExists = products.some(product => product.id === savedProduct.id);
+    if (!alreadyExists) products.push(savedProduct);
+  });
+}
+// Lee los productos creados desde el panel de administración.
+function getAdminProducts() {
+  return JSON.parse(localStorage.getItem("huella-admin-products")) || [];
+}
+// Guarda los productos nuevos creados desde administración.
+function saveAdminProducts(adminProducts) {
+  localStorage.setItem("huella-admin-products", JSON.stringify(adminProducts));
+}
+// Decide qué contenido pintar según la pestaña activa del panel.
+function renderAdminPanel() {
+  const search = document.getElementById("adminSearch").value.toLowerCase().trim();
+  const addButton = document.getElementById("adminAddProduct");
+  renderAdminStats();
+  addButton.classList.toggle("hidden", currentAdminTab !== "tienda");
+  if (currentAdminTab === "adopciones") renderAdminAdoptions(search);
+  if (currentAdminTab === "voluntarios") renderAdminVolunteers(search);
+  if (currentAdminTab === "tienda") renderAdminShop(search);
+}
+// Calcula y muestra estadísticas de voluntarios, adopciones y pedidos.
+function renderAdminStats() {
+  const stats = document.getElementById("adminStats");
+  const requests = getRequests();
+  const adoptionCount = requests.filter(request => request.type === "Adopción").length;
+  const volunteerCount = requests.filter(request => request.type === "Voluntariado").length;
+  const orderCount = getOrders().length;
+  stats.innerHTML = `
+    <article class="admin-stat-card"><small>Voluntariado</small><strong>${volunteerCount}</strong></article>
+    <article class="admin-stat-card"><small>Adopciones</small><strong>${adoptionCount}</strong></article>
+    <article class="admin-stat-card"><small>Pedidos tienda</small><strong>${orderCount}</strong></article>
+  `;
+}
+// Muestra la tabla de solicitudes de adopción y sus botones de aprobar/rechazar.
+function renderAdminAdoptions(search) {
+  const content = document.getElementById("adminContent");
+  const requests = getRequests()
+    .filter(request => request.type === "Adopción")
+    .filter(request => adminMatchesSearch(request, search));
+  content.innerHTML = `
+    <section class="admin-card">
+      <div class="admin-card-header">
+        <h2>📋 Solicitudes de Adopción</h2>
+        <p>Gestiona las familias interesadas en adoptar.</p>
+      </div>
+      <div class="admin-table-wrap">
+        <table class="admin-table">
+          <thead><tr><th>Mascota</th><th>Adoptante</th><th>Fecha</th><th>Estado</th><th>Acción</th></tr></thead>
+          <tbody>
+            ${requests.length ? requests.map((request, index) => `
+              <tr>
+                <td>${request.petName || "Sin mascota"}</td>
+                <td>${request.email}</td>
+                <td>${request.date}</td>
+                <td><span class="status-pill">${request.status}</span></td>
+                <td>
+                  <div class="table-actions">
+                    <button class="table-action" onclick="updateRequestStatus(${request.id || index}, 'Aprobada')">Aprobar</button>
+                    <button class="table-action danger" onclick="updateRequestStatus(${request.id || index}, 'Rechazada')">Rechazar</button>
+                  </div>
+                </td>
+              </tr>`).join("") : `<tr><td colspan="5" class="admin-empty">Sin solicitudes.</td></tr>`}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  `;
+}
+
 
