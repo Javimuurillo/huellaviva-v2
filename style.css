@@ -885,3 +885,16 @@ color:#1b0e07;
 from{opacity:0;transform:translateY(16px) scale(0.96);}
 to{opacity:1;transform:translateY(0) scale(1);}
 }
+}
+/* Responsive para tablets y móviles grandes. */
+@media (max-width:900px){
+/* Barra superior del panel de administración. */
+.admin-topbar{height:auto;padding:14px;flex-direction:column;align-items:stretch;}
+/* Pestañas del panel: adopciones, voluntarios y tienda. */
+.admin-tabs{justify-content:center;}
+/* Tarjetas de estadísticas del panel. */
+.admin-stats{grid-template-columns:1fr;}
+.admin-toolbar{flex-direction:column;align-items:stretch;}
+.admin-toolbar input{max-width:none;}
+.admin-product-form{grid-template-columns:1fr;}
+}
