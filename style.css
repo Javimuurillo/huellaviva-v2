@@ -1855,3 +1855,10 @@ body.dark #petModal .modal-content{
 background:linear-gradient(135deg,#122036,#0f172a 70%);
 border-color:rgba(148,163,184,0.22);
 }
+/* Columna de imagen: mantiene la foto grande, limpia y con recorte bonito. */
+#petModal .modal-image-wrap{
+position:relative;
+min-height:560px;
+overflow:hidden;
+background:linear-gradient(135deg,#dbeafe,#e0f2fe);
+}
