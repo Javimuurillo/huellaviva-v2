@@ -1467,3 +1467,93 @@ body.dark .event-card{
   letter-spacing:-0.02em;
   margin:0;
 }
+
+/* Mejora la lectura de las descripciones dentro de las tarjetas. */
+.card-body p,
+.product-body p{
+  color:var(--muted);
+  margin:0;
+  line-height:1.55;
+}
+
+/* Ordena los botones de cada mascota para que no queden apretados. */
+.card-actions{
+  margin-top:auto;
+  padding-top:12px;
+  align-items:center;
+}
+
+/* Hace que el botón de Ver ficha tenga una presencia más profesional. */
+.pet-card .btn.primary{
+  border-radius:999px;
+  padding:12px 22px;
+  box-shadow:0 12px 28px rgba(33,114,217,0.26);
+}
+
+/* Redondea y centra mejor el botón de favorito. */
+.pet-card .icon-btn{
+  width:48px;
+  height:48px;
+  border-radius:18px;
+  display:grid;
+  place-items:center;
+  flex-shrink:0;
+}
+
+/* Mantiene todas las imágenes de mascotas con la misma altura y un recorte bonito. */
+.pet-card .card-image{
+  height:230px;
+  object-fit:cover;
+  border-bottom:1px solid var(--border);
+}
+
+/* Crea una pequeña sombra interior sobre la imagen para que se integre mejor con la tarjeta. */
+.pet-card::after,
+.product-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(180deg,transparent 38%,rgba(0,0,0,0.06));
+  opacity:0;
+  transition:opacity 0.3s ease;
+}
+
+/* Al pasar el ratón, aparece el brillo suave sobre la tarjeta. */
+.pet-card:hover::after,
+.product-card:hover::after{
+  opacity:1;
+}
+
+/* Hace que las etiquetas tipo Disponible, Perro o Comida parezcan chips modernos. */
+.badge{
+  display:inline-flex;
+  align-items:center;
+  width:max-content;
+  background:linear-gradient(135deg,rgba(33,114,217,0.14),rgba(33,114,217,0.08));
+  border:1px solid rgba(33,114,217,0.10);
+  box-shadow:0 8px 18px rgba(33,114,217,0.08);
+}
+
+/* En modo oscuro las etiquetas tienen más contraste. */
+body.dark .badge{
+  background:linear-gradient(135deg,rgba(96,165,250,0.22),rgba(96,165,250,0.10));
+  border-color:rgba(96,165,250,0.20);
+  color:#93c5fd;
+}
+
+/* Mejora la cuadrícula de mascotas para que quede equilibrada en pantallas grandes. */
+#petsGrid.cards-grid{
+  align-items:stretch;
+}
+
+/* Hace que cada tarjeta de mascota use toda su altura y quede alineada con las demás. */
+#petsGrid .pet-card{
+  display:flex;
+  flex-direction:column;
+}
+
+/* Hace que el cuerpo de la tarjeta ocupe el espacio restante. */
+#petsGrid .card-body{
+  flex:1;
+}
