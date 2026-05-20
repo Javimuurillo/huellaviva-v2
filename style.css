@@ -1956,3 +1956,9 @@ font-weight:900;
 letter-spacing:0.12em;
 text-transform:uppercase;
 }
+/* Valor de cada dato. */
+#petModal .pet-info-grid strong{
+display:block;
+color:var(--text);
+font-size:1rem;
+}
