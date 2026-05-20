@@ -724,12 +724,12 @@ function renderAdminShop(search) {
   `;
   document.getElementById("adminProductForm").addEventListener("submit", createAdminProduct);
 }
-// Comprueba si un elemento coincide con el texto escrito en el buscador del admin.
+// Comprueba si un elemento coincide con el texto escrito en el buscador del admin.//
 function adminMatchesSearch(item, search) {
   if (!search) return true;
   return JSON.stringify(item).toLowerCase().includes(search);
 }
-// Cambia el estado de una solicitud: Aprobada, Rechazada o Aceptada.
+// Cambia el estado de una solicitud: Aprobada, Rechazada o Aceptada.//
 function updateRequestStatus(requestId, newStatus) {
   const requests = getRequests();
   const realIndex = requests.findIndex((request, index) => (request.id || index) === requestId);
@@ -739,14 +739,14 @@ function updateRequestStatus(requestId, newStatus) {
     renderAdminPanel();
   }
 }
-// Elimina una solicitud, por ejemplo al quitar un voluntario aceptado.
+// Elimina una solicitud, por ejemplo al quitar un voluntario aceptado.//
 function deleteRequest(requestId) {
   const requests = getRequests();
   const filteredRequests = requests.filter((request, index) => (request.id || index) !== requestId);
   localStorage.setItem("huella-requests", JSON.stringify(filteredRequests));
   renderAdminPanel();
 }
-// Cambia un pedido de la tienda a estado Enviado.
+// Cambia un pedido de la tienda a estado Enviado.//
 function markOrderSent(orderId) {
   const orders = getOrders();
   const order = orders.find(item => item.id === orderId);
@@ -756,5 +756,59 @@ function markOrderSent(orderId) {
     renderAdminPanel();
   }
 }
-
+// Crea un producto nuevo desde administración y lo añade a la tienda.//
+function createAdminProduct(event) {
+  event.preventDefault();
+  const adminProducts = getAdminProducts();
+  const newProduct = {
+    id: `admin-${Date.now()}`,
+    name: document.getElementById("newProductName").value.trim(),
+    price: Number(document.getElementById("newProductPrice").value),
+    category: document.getElementById("newProductCategory").value.trim(),
+    img: document.getElementById("newProductImage").value.trim() || getProductFallbackImage("Juguetes"),
+    description: document.getElementById("newProductDescription").value.trim()
+  };
+  adminProducts.push(newProduct);
+  saveAdminProducts(adminProducts);
+  products.push(newProduct);
+  // Dibuja los productos de la tienda.//
+  renderProducts();
+  renderAdminPanel();
+  alert("Producto añadido correctamente a la tienda.");
+}
+// Activa el chatbot: abrir/cerrar ventana, enviar mensajes y responder.//
+function initChatbot() {
+  const chatbot = document.getElementById("chatbot");
+  const chatbotToggle = document.getElementById("chatbotToggle");
+  const chatbotClose = document.getElementById("chatbotClose");
+  const chatbotForm = document.getElementById("chatbotForm");
+  const chatbotInput = document.getElementById("chatbotInput");
+  const chatbotMessages = document.getElementById("chatbotMessages");
+  if (!chatbot || !chatbotToggle || !chatbotForm) return;
+  addChatMessage(
+    "bot",
+    "¡Hola! 🐾 Soy Huellita, tu guía en Huella Viva. ¿Buscas a tu nuevo mejor amigo o quieres ayudarnos como voluntario? ¡Dime lo que necesitas! 🐶🐱"
+  );
+  chatbotToggle.addEventListener("click", () => {
+    const isOpen = chatbot.classList.toggle("open");
+    chatbotToggle.classList.toggle("chat-open", isOpen);
+    chatbotToggle.textContent = isOpen ? "×" : "💬";
+    if (isOpen) chatbotInput.focus();
+  });
+  chatbotClose.addEventListener("click", () => {
+    chatbot.classList.remove("open");
+    chatbotToggle.classList.remove("chat-open");
+    chatbotToggle.textContent = "💬";
+  });
+  chatbotForm.addEventListener("submit", event => {
+    event.preventDefault();
+    const userText = chatbotInput.value.trim();
+    if (!userText) return;
+    addChatMessage("user", userText);
+    chatbotInput.value = "";
+    setTimeout(() => {
+      const answer = getChatbotAnswer(userText);
+      addChatMessage("bot", answer);
+    }, 350);
+  });
 
