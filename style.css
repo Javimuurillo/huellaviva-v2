@@ -1350,3 +1350,120 @@ transform-origin:center;
 transform:scale(1.1) rotate(1.2deg);
 filter:saturate(1.15) contrast(1.05);
 }
+.pet-card /* Etiquetas pequeñas, por ejemplo Disponible, Perro, Gato o categoría. */
+.badge{
+transition:transform 0.3s ease,background 0.3s ease;
+}
+.pet-card:hover /* Etiquetas pequeñas, por ejemplo Disponible, Perro, Gato o categoría. */
+.badge{
+transform:translateY(-3px);
+}
+.pet-card:hover .icon-btn{
+animation:heartBeat 0.9s ease infinite;
+}
+@keyframes heartBeat{
+0%,100%{transform:scale(1);}
+35%{transform:scale(1.14);}
+55%{transform:scale(0.96);}
+}
+/* Tarjeta individual de evento con imagen y texto. */
+.event-card{
+position:relative;
+isolation:isolate;
+}
+.event-card::after{
+content:"";
+position:absolute;
+left:0;
+top:18px;
+bottom:18px;
+width:5px;
+border-radius:999px;
+background:var(--orange);
+transform:scaleY(0);
+transform-origin:center;
+transition:transform 0.35s ease;
+}
+.event-card:hover::after{
+transform:scaleY(1);
+}
+.event-card img{
+transition:transform 0.9s ease,filter 0.45s ease;
+transform-origin:center;
+}
+.event-card:hover img{
+transform:scale(1.08);
+filter:saturate(1.18) brightness(1.04);
+}
+.event-content{
+transition:transform 0.35s ease;
+}
+.event-card:hover .event-content{
+transform:translateX(8px);
+}
+.card-image,
+.event-card img{
+animation:softImageGlow 3.5s ease-in-out infinite;
+}
+@keyframes softImageGlow{
+0%,100%{filter:saturate(1);}
+50%{filter:saturate(1.08);}
+}
+@media (prefers-reduced-motion:reduce){
+.pet-card,
+.event-card,
+.card-image,
+.event-card img,
+.pet-card:hover .icon-btn{
+animation:none !important;
+transition:none !important;
+}
+.pet-card:hover .card-image,
+.event-card:hover img,
+.event-card:hover .event-content{
+transform:none !important;
+}
+}
+
+/* ==============================================================
+   MEJORA FINAL DE ESTÉTICA
+   Estas reglas corrigen el espaciado y mejoran visualmente las
+   tarjetas de mascotas, productos y próximos eventos sin cambiar
+   la estructura HTML ni romper las funciones de JavaScript.
+   ============================================================== */
+
+/* Hace que todas las tarjetas importantes tengan una altura ordenada y un borde más limpio. */
+.pet-card,
+.product-card,
+.event-card{
+  background:linear-gradient(180deg,rgba(255,255,255,0.98),rgba(245,250,255,0.96));
+  border:1px solid rgba(20,33,61,0.10);
+  box-shadow:0 18px 45px rgba(15,23,42,0.10);
+  overflow:hidden;
+}
+
+/* En modo oscuro las tarjetas tienen un azul oscuro más elegante y no quedan tan planas. */
+body.dark .pet-card,
+body.dark .product-card,
+body.dark .event-card{
+  background:linear-gradient(180deg,#17243a 0%,#101b2e 100%);
+  border:1px solid rgba(148,163,184,0.22);
+  box-shadow:0 24px 60px rgba(0,0,0,0.35);
+}
+
+/* Añade el espacio interior correcto a las tarjetas para que el texto no quede pegado al borde. */
+.card-body{
+  padding:22px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+/* Mejora los títulos de las tarjetas de mascotas y productos. */
+.card-body h3,
+.product-body h3{
+  font-size:1.45rem;
+  line-height:1.18;
+  letter-spacing:-0.02em;
+  margin:0;
+}
