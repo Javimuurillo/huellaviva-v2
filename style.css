@@ -1850,3 +1850,8 @@ background:linear-gradient(135deg,var(--surface),rgba(255,255,255,0.92));
 color:var(--text);
 box-shadow:0 30px 90px rgba(0,0,0,0.38);
 }
+/* En modo oscuro la ficha usa azul oscuro con profundidad, no negro plano. */
+body.dark #petModal .modal-content{
+background:linear-gradient(135deg,#122036,#0f172a 70%);
+border-color:rgba(148,163,184,0.22);
+}
