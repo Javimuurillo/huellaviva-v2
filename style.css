@@ -1785,3 +1785,8 @@ width:360px;
 max-width:100%;
 border-radius:28px;
 }
+/* En pantallas medianas quitamos la columna lateral para que productos y carrito respiren mejor. */
+@media (max-width:1120px){
+.shop-layout{
+grid-template-columns:1fr;
+}
