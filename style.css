@@ -1946,3 +1946,13 @@ body.dark #petModal .pet-info-grid div{
 background:rgba(96,165,250,0.12);
 border-color:rgba(96,165,250,0.22);
 }
+/* Título pequeño de cada dato. */
+#petModal .pet-info-grid span{
+display:block;
+margin-bottom:4px;
+color:var(--muted);
+font-size:0.78rem;
+font-weight:900;
+letter-spacing:0.12em;
+text-transform:uppercase;
+}
