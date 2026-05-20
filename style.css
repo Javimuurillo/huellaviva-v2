@@ -1235,3 +1235,118 @@ padding:14px;
 background:rgba(19,12,8,0.92);
 border-top:1px solid rgba(255,145,77,0.14);
 }
+.chatbot-form input{
+width:100%;
+border:0;
+outline:none;
+border-radius:16px;
+padding:0 15px;
+background:rgba(255,255,255,0.07);
+color:#fff7ed;
+font-weight:800;
+}
+.chatbot-form input::placeholder{color:rgba(255,247,237,0.58);}
+.chatbot-form button{
+height:48px;
+border:0;
+border-radius:14px;
+background:var(--orange);
+color:#1b0d07;
+font-size:1.1rem;
+cursor:pointer;
+}
+.chatbot-form button:hover{filter:brightness(1.05);}
+.chatbot-toggle.chat-open{
+background:#a61f25;
+color:white;
+border-color:#180808;
+}
+body:not(.dark) /* Ventana flotante del chatbot. */
+.chatbot{
+background:#ffffff;
+border-color:rgba(20,33,61,0.10);
+}
+body:not(.dark) .chatbot-messages{
+background:
+radial-gradient(circle at top right,rgba(255,145,77,0.13),transparent 35%),
+#fff7ed;
+}
+body:not(.dark) .chat-message.bot{
+color:#14213d;
+background:#ffffff;
+box-shadow:0 14px 35px rgba(15,23,42,0.08);
+}
+body:not(.dark) .chatbot-form{
+background:#ffffff;
+border-top-color:rgba(20,33,61,0.08);
+}
+body:not(.dark) .chatbot-form input{
+color:#14213d;
+background:#f1f5f9;
+}
+body:not(.dark) .chatbot-form input::placeholder{color:#64748b;}
+@media (max-width:520px){
+/* Ventana flotante del chatbot. */
+.chatbot{
+right:10px;
+left:10px;
+bottom:86px;
+width:auto;
+height:min(560px,calc(100vh - 105px));
+border-radius:24px;
+}
+/* Botón flotante para abrir/cerrar el chatbot. */
+.chatbot-toggle{
+right:18px;
+bottom:18px;
+}
+/* Botón flotante para volver arriba. */
+.scroll-top{
+right:88px;
+bottom:25px;
+width:46px;
+height:46px;
+}
+}
+.pet-card,
+/* Tarjeta individual de evento con imagen y texto. */
+.event-card{
+animation:cardEntrance 0.75s ease both;
+}
+@keyframes cardEntrance{
+from{
+opacity:0;
+transform:translateY(32px) scale(0.96);
+}
+to{
+opacity:1;
+transform:translateY(0) scale(1);
+}
+}
+.pet-card{
+position:relative;
+isolation:isolate;
+}
+.pet-card::before{
+content:"";
+position:absolute;
+inset:0;
+border-radius:var(--radius);
+background:linear-gradient(135deg,rgba(255,132,69,0.45),rgba(33,114,217,0.35),transparent 60%);
+opacity:0;
+z-index:-1;
+transition:opacity 0.35s ease;
+}
+.pet-card:hover::before{
+opacity:1;
+}
+.pet-card /* Imágenes de tarjetas: mismo tamaño y recorte para todas. */
+.card-image{
+transition:transform 0.8s ease,filter 0.45s ease;
+transform-origin:center;
+}
+.pet-card:hover /* Imágenes de tarjetas: mismo tamaño y recorte para todas. */
+.card-image{
+transform:scale(1.1) rotate(1.2deg);
+filter:saturate(1.15) contrast(1.05);
+}
