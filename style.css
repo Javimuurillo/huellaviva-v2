@@ -1982,3 +1982,9 @@ flex-wrap:wrap;
 gap:14px;
 margin-top:24px;
 }
+/* Los botones quedan más cómodos y no pegados. */
+#petModal .modal-actions .btn{
+min-width:170px;
+justify-content:center;
+padding:14px 20px;
+}
