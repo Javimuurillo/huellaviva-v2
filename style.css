@@ -1811,3 +1811,23 @@ grid-template-columns:1fr;
 width:100%;
 }
 }
+/* Ventana general del modal: centrada, grande pero sin salirse de pantalla. */
+#petModal.modal{
+width:min(1040px,94vw);
+max-width:1040px;
+border:0;
+padding:0;
+background:transparent;
+border-radius:36px;
+overflow:visible;
+}
+  /* Ventana general del modal: centrada, grande pero sin salirse de pantalla. */
+#petModal.modal{
+width:min(1040px,94vw);
+max-width:1040px;
+border:0;
+padding:0;
+background:transparent;
+border-radius:36px;
+overflow:visible;
+}
